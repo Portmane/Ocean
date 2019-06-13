@@ -1,7 +1,7 @@
 package collections.queue;
 
 
-import collections.heler.Customer;
+import collections.helper.Customer;
 
 import java.util.*;
 
