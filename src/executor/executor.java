@@ -8,20 +8,20 @@ import java.util.concurrent.Executor;
 
 
 class SerialExecutor implements Executor {
-    final Queue<Runnable> tasks = new ArrayDeque<>();
-    final Executor executor;
-    Runnable active;
+    final Queue<Runnable> tasks = new ArrayDeque<>();   //Queue of Runnable objects.
+    final Executor executor;                            //Variable to witch will be assigned executor to perform Runnable instance.
+    Runnable active;                                    //Will store value returned from tasks(local variable) Queue.
 
     SerialExecutor(Executor executor) {
         this.executor = executor;
-    }
+    }   //Assigned executor to local variable.
 
-    public synchronized void execute(Runnable r) {
-        tasks.add(() -> {
+    public synchronized void execute(Runnable r) {  //Overrides Executor method.
+        tasks.add(() -> {   //Adding Runnable instance to Queue throw lambda expression.
             try {
-                r.run();
+                r.run();    //Line of adding.
             } finally {
-                scheduleNext();
+                scheduleNext(); //Final step in witch we will be going throw queue until the instance won't be performed.
             }
         });
         if (active == null) {
@@ -43,9 +43,11 @@ public class executor {
             public void execute(Runnable command) {
                 command.run();
             }
-        };
-        SerialExecutor se = new SerialExecutor(ex);
-        se.execute(new Runnable() {
+        };              /*Over executor that will be used in SerialExecutor
+                                                        * to execute Runnable objects. */
+        SerialExecutor se = new SerialExecutor(ex);     /*Assign ex object(executor) to executor variable in SerialExecutor
+                                                        * class.*/
+        se.execute(new Runnable() {                     //Example !!! Of using.
             @Override
             public void run() {
                 System.out.println("Hello");
