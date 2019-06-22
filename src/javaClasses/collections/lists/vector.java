@@ -1,11 +1,10 @@
-package collections.lists;
+package javaClasses.collections.lists;
 /*  Vector uses a dynamic array to store the data elements.
 * It is similar to ArrayList. However, It is synchronized
 * and contains many methods that are not the part of
 * Collection framework.*/
 
 
-import java.util.Iterator;  //for example.
 import java.util.Vector;
 
 

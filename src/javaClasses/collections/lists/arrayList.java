@@ -1,4 +1,4 @@
-package collections.lists;
+package javaClasses.collections.lists;
 /*  The ArrayList class implements the List interface.
 * It uses a dynamic array to store the duplicate element
 * of different data types. The ArrayList class maintains
@@ -8,8 +8,6 @@ package collections.lists;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;  //For commented.
-
 
 
 public class arrayList {
