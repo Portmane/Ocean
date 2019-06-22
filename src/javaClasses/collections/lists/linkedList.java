@@ -1,4 +1,4 @@
-package collections.lists;
+package javaClasses.collections.lists;
 /*  LinkedList implements the Collection interface.
 * It uses a doubly linked list internally to store
 * the elements. It can store the duplicate elements.
@@ -7,7 +7,6 @@ package collections.lists;
 * is required.*/
 
 
-import java.util.Iterator;  //for example.
 import java.util.LinkedList;
 
 

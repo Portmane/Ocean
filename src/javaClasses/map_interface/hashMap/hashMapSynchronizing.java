@@ -1,9 +1,8 @@
-package map_interface.hashMap;
+package javaClasses.map_interface.hashMap;
 
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
