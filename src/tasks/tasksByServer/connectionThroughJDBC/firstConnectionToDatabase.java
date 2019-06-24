@@ -1,4 +1,4 @@
-package tasks.tasksByServer.connect;
+package tasks.tasksByServer.connectionThroughJDBC;
 
 
 import java.sql.*;
