@@ -7,7 +7,7 @@ $$$ - information - {
 }  
 ###Fixed items
 $Too run this programme you will need to set up the web server(local) with the programme such as Xampp or MAMP(free) etc.  
-$After this you will have to import the file pinned in the data folder of the repository to your web sever.
+$After this you will have to import the file pinned in the resources folder of the repository to your web sever.
 
 ####Intellij IDE  
 $I am working in Intellij IDE, so my next steps i will explain by this IDE.  
