@@ -11,12 +11,22 @@
     <name>Java-API-items</name>
     <url>https://github.com/Portmane/Java-API-items</url>
 
+
     <properties>
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
     </properties>
 
 
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate.orm.tooling</groupId>
+            <artifactId>hibernate-enhance-maven-plugin</artifactId>
+            <version>5.4.2.Final</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
