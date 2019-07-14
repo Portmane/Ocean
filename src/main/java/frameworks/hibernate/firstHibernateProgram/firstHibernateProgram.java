@@ -1,7 +1,6 @@
 package frameworks.hibernate.firstHibernateProgram;
 
 
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,9 +11,10 @@ import java.util.Iterator;
 import java.util.List;
 
 
+
 public class firstHibernateProgram {
-    private static SessionFactory factory;                      //Help elements.
-    private static firstHibernateProgram FHP = new firstHibernateProgram();    //Help elements.
+    private static SessionFactory factory;                                      //Help elements.
+    private static firstHibernateProgram FHP = new firstHibernateProgram();     //Help elements.
     public static void main(String[] args) {
 
         try {
@@ -45,11 +45,10 @@ public class firstHibernateProgram {
 
     //Method to CREATE an employee in the database.
     private Integer addEmployee(String username, String password, String user_email) {
-        Session session = factory.openSession();
         Transaction tx = null;
         Integer employeeId = null;
 
-        try {
+        try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
             Employee employee = new Employee(username, password, user_email);
             employeeId = (Integer) session.save(employee);
@@ -58,18 +57,15 @@ public class firstHibernateProgram {
             if (tx != null)
                 tx.rollback();
             exc.printStackTrace();
-        } finally {
-            session.close();
         }
         return employeeId;
     }
     //Overloaded for 2-nd constructor.
     private Integer addEmployee(String username, String password, String user_email, String first_name, String last_name) {
-        Session session = factory.openSession();
         Transaction tx = null;
         Integer employeeId = null;
 
-        try {
+        try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
             Employee employee = new Employee(username, password, user_email, first_name, last_name);
             employeeId = (Integer) session.save(employee);
@@ -78,58 +74,49 @@ public class firstHibernateProgram {
             if (tx != null)
                 tx.rollback();
             exc.printStackTrace();
-        } finally {
-            session.close();
         }
         return employeeId;
     }
 
     //Method to DELETE an employee from the records.
     private void deleteEmployee(Integer EmployeeId) {
-        Session session = factory.openSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
-            Employee employee = (Employee)session.get(Employee.class, EmployeeId);
+            Employee employee = (Employee) session.get(Employee.class, EmployeeId);
             session.delete(employee);
             tx.commit();
         } catch (HibernateException exc) {
             if (tx != null) tx.rollback();
             exc.printStackTrace();
-        } finally {
-            session.close();
         }
     }
 
     //Method to UPDATE username for an employee.
     private void updateEmployee(Integer EmployeeId, String Username) {
-        Session session = factory.openSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
-            Employee employee = (Employee)session.get(Employee.class, EmployeeId);
+            Employee employee = (Employee) session.get(Employee.class, EmployeeId);
             employee.setUsername(Username);
             session.update(employee);
             tx.commit();
         } catch (HibernateException exc) {
             if (tx != null) tx.rollback();
             exc.printStackTrace();
-        } finally {
-            session.close();
         }
     }
 
     //Method to READ all the employees.
     private void listEmployees() {
-        Session session = factory.openSession();
         Transaction tx = null;
 
-        try {
+        try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
             List employees = session.createQuery("FROM Employee").list();
-            for (Iterator iterator = employees.iterator(); iterator.hasNext();) {
+            for (Iterator iterator = employees.iterator(); iterator.hasNext(); ) {
                 Employee employee = (Employee) iterator.next();
                 System.out.println("Username: " + employee.getUsername());
                 System.out.println("    Password: " + employee.getPassword());
@@ -141,8 +128,6 @@ public class firstHibernateProgram {
         } catch (HibernateException exc) {
             if (tx != null) tx.rollback();
             exc.printStackTrace();
-        } finally {
-            session.close();
         }
     }
 }
