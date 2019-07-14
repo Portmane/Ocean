@@ -1,8 +1,14 @@
 package frameworks.hibernate.firstHibernateProgram;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+
+@Entity
 public class Employee {
+    @Id
     private int id;
     private String username;
     private String password;
