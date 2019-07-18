@@ -24,7 +24,10 @@ public class firstHibernateProgram {
             factory = new Configuration().configure().buildSessionFactory();    //Receiving of this sessionFactory instance.
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);
-            throw new ExceptionInInitializerError(ex);                          //NOT NOW !!!
+            throw new ExceptionInInitializerError(ex);                          /*Throws ExceptionInInitializerError
+                                                                                * with argument of occurred exception and
+                                                                                * can be used later with getException()
+                                                                                * method to give reference to Throwable obj.*/
         }
 
         //Add a few employee records in database.
@@ -60,8 +63,14 @@ public class firstHibernateProgram {
                                                                                 * this transaction.*/
         } catch (HibernateException exc) {
             if (tx != null)
-                tx.rollback();                                                  //NOT NOW !!!
-            exc.printStackTrace();                                              //NOT NOW !!!
+                tx.rollback();                                                  /*Roll back the current resource transaction
+                                                                                (Undoes all changes made in the current
+                                                                                transaction).
+                                                                                *   This will occur only and only when,
+                                                                                * when the transaction have been opened.
+                                                                                * (condition is true)*/
+            exc.printStackTrace();                                              /*Prints this throwable and its backtrace
+                                                                                * to the standard error stream.*/
         }
         return employeeId;                                                      //Returning Employee ID.
     }
@@ -96,8 +105,14 @@ public class firstHibernateProgram {
                                                                                 * current session.*/
             tx.commit();                                                        //Commit the changes.
         } catch (HibernateException exc) {
-            if (tx != null) tx.rollback();                                      //NOT NOW !!!
-            exc.printStackTrace();                                              //NOT NOW !!!
+            if (tx != null) tx.rollback();                                      /*Roll back the current resource transaction
+                                                                                (Undoes all changes made in the current
+                                                                                transaction).
+                                                                                *   This will occur only and only when,
+                                                                                * when the transaction have been opened.
+                                                                                * (condition is true)*/
+            exc.printStackTrace();                                              /*Prints this throwable and its backtrace
+                                                                                * to the standard error stream.*/
         }
     }
 
@@ -114,8 +129,14 @@ public class firstHibernateProgram {
             session.update(employee);                                           //Pulling changes to database.
             tx.commit();                                                        //Commit the changes.
         } catch (HibernateException exc) {
-            if (tx != null) tx.rollback();                                      //NOT NOW !!!
-            exc.printStackTrace();                                              //NOT NOW !!!
+            if (tx != null) tx.rollback();                                      /*Roll back the current resource transaction
+                                                                                (Undoes all changes made in the current
+                                                                                transaction).
+                                                                                *   This will occur only and only when,
+                                                                                * when the transaction have been opened.
+                                                                                * (condition is true)*/
+            exc.printStackTrace();                                              /*Prints this throwable and its backtrace
+                                                                                * to the standard error stream.*/
         }
     }
 
@@ -151,8 +172,14 @@ public class firstHibernateProgram {
             */
             tx.commit();                                                        //Commit changes.
         } catch (HibernateException exc) {
-            if (tx != null) tx.rollback();                                      //NOT NOW !!!
-            exc.printStackTrace();                                              //NOT NOW !!!
+            if (tx != null) tx.rollback();                                      /*Roll back the current resource transaction
+                                                                                (Undoes all changes made in the current
+                                                                                transaction).
+                                                                                *   This will occur only and only when,
+                                                                                * when the transaction have been opened.
+                                                                                * (condition is true)*/
+            exc.printStackTrace();                                              /*Prints this throwable and its backtrace
+                                                                                * to the standard error stream.*/
         }
     }
 }
