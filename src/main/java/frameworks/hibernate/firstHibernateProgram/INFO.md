@@ -54,4 +54,7 @@ files located in resource type folder.
        After all this, we will be able to create java file "firstHibernateProgram.java"  
     work of which is fully commented in source code.
 </pre>
+>Source code of "firstHibernateProgram.java" have been taken from [her](https://www.tutorialspoint.com/hibernate/hibernate_examples.htm).  
+Also good information is represented [her](https://thoughts-on-java.org/hibernate-getting-started/), where you will also find another declaration  
+of "hibernate.cfg.xml" file and another factory classes for work Java code with database.
 ####>All corrections and additions are welcome !!!
