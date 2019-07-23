@@ -12,7 +12,7 @@
     <url>https://github.com/Portmane/Java-API-items</url>
 
 
-    <properties>
+    <properties>                   
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
     </properties>
