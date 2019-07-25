@@ -1,10 +1,10 @@
-#First Hibernate program
+# First Hibernate program
 >If you are working in other IDE and this steps are completely another than  
 you are welcome to write the same for your IDE. 
 
 >And yes, don't forget to activate the database.
-##IDE's:
-* ###Intellij IDE:
+## IDE's:
+* ### Intellij IDE:
 <pre>
        First of all we have to add the project dependency of Hibernate.
        In "Project window" (Alt + 1) view full hierarchy of project and  
@@ -57,4 +57,4 @@ files located in resource type folder.
 >Source code of "firstHibernateProgram.java" have been taken from [her](https://www.tutorialspoint.com/hibernate/hibernate_examples.htm).  
 Also good information is represented [her](https://thoughts-on-java.org/hibernate-getting-started/), where you will also find another declaration  
 of "hibernate.cfg.xml" file and another factory classes for work Java code with database.
-####>All corrections and additions are welcome !!!
+#### >All corrections and additions are welcome !!!
