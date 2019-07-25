@@ -23,5 +23,5 @@ ndencies in program, for example XML based metadata or [Java-based configuration
 which is represented in 1.12.1 of my and vanilla documentation.
 <pre>
    Here you can see how Spring IoC container works:
-   ![The Spring IoC container](https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png)
 </pre>
+![The Spring IoC container](https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png)
