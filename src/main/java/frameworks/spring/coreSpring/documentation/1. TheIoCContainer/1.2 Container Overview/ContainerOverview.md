@@ -1,10 +1,10 @@
-#Container Overview
+# Container Overview
 
-###Location
+### Location
 The **org.springframework.context.ApplicationContext** interface represents the Spring IoC container  
 and is responsible for instantiating, configuring, and assembling the beans.  
 
-###Benefits
+### Benefits
 <pre>
    ApplicationContext is a sub-interface of BeanFactory that adds:
 * Easier integration with Spring’s AOP features
@@ -13,7 +13,7 @@ and is responsible for instantiating, configuring, and assembling the beans.
 * Application-layer specific contexts such as the WebApplicationContext for use in web applications.
 </pre>
 
-###For what is container need for ?
+### For what is container need for ?
 <pre>
    Container is a point where Spring gets Yours Business Objects (POJOs) and Configuration Metadata in one  
 Fully configured system.
