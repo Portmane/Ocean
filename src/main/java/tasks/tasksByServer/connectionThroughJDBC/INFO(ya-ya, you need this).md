@@ -1,4 +1,4 @@
- ###Fixed information
+### Fixed information
 <pre>
        Too run this programme you will need to set up the web server(local)  
     with the programme such as Xampp or MAMP(free) etc. After this you will  
@@ -6,7 +6,7 @@
     to your web sever.
 </pre>
 
-####Intellij IDE  
+#### Intellij IDE  
 <pre>
        I am working in Intellij IDE, so my next steps i will explain by this  
     IDE. To start with you have to open Database window witch will be easy to  
@@ -45,4 +45,4 @@ is set of JDBC interfaces witch was implemented by specified driver.
     API itself.  
 </pre>
 
-#####If you could to write the same thing for overs IDE's you are free to do this:smile:  
+>If you could to write the same thing for overs IDE's you are free to do this:smile:  
