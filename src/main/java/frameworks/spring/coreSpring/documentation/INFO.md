@@ -20,8 +20,9 @@ documentation you will be able to find more extensive presentation of this parag
 1. The IoC Container:       <<- This chapter covers Spring’s Inversion of Control (IoC) container ->>
     1.1 Introduction to the Spring IoC Container and Beans      <<- About IoC (DI) principle of Spring 
                                                                 Framework implementation ->>
-    1.2 Container Overview                                      <<- Info about containvers in Core Spring and
-                                                                for what they are need ->>
+    1.2 Container Overview                                      <<- Info about Spring containvers in IoC and
+                                                                for what are they need ->>
+        1.2.1 Configuration Metadata                                  <<-  ->>
 </pre>
 
 
