@@ -31,4 +31,4 @@ documentation you will be able to find more extensive presentation of this parag
 
 
 
->All information have been tacked from [Core Spring documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans).
+>All information has been taken from [Core Spring documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans).
