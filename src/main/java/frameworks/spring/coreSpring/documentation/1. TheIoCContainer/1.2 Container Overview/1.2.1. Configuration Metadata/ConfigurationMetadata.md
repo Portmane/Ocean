@@ -13,7 +13,7 @@ is actually written. These days, many developers choose [Java-based configuratio
 Spring applications.
 
 
-Here you can see simple example of ".xml" file metadata.
+Here you can see simple example of ".xml" file metadata:
 ```mxml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
