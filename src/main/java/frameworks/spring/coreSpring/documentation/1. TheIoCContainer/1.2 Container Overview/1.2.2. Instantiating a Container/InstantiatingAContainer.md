@@ -86,12 +86,12 @@ absolute locations. It is generally preferable to keep an indirection for such a
 "${…​}" placeholders that are resolved against JVM system properties at runtime.  
 
 ### The Groovy Bean Definition DSL
-> I am nor using Groovy, soo it is simple copyright.
+> I am not using Groovy, soo it is simple copyright.
 
 As a further example for externalized configuration metadata, bean definitions can also be expressed in Spring’s  
 Groovy Bean Definition DSL, as known from the Grails framework. Typically, such configuration live in a ".groovy"  
 file with the structure shown in the following example:  
-```java
+```groovy
 beans {
     dataSource(BasicDataSource) {
         driverClassName = "org.hsqldb.jdbcDriver"
