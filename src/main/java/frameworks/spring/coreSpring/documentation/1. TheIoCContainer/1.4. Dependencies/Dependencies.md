@@ -1,7 +1,7 @@
 # Dependencies
 
 
-###About
+### About
 A typical enterprise application does not consist of a single object (or bean in the Spring parlance). Even the simplest  
 application has a few objects that work together to present what the end-user sees as a coherent application. This next  
 section explains how you go from defining a number of bean definitions that stand alone to a fully realized application  
