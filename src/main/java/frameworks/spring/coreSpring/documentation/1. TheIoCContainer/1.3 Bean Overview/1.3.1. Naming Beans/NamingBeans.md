@@ -11,7 +11,7 @@ which will be linked to the bean.
 
 ### Aliasing a Bean outside the Bean Definition
 In metadata definition we also have one attribute (`<alias/>`) that lets us name every bean outside of bean definition to  
-use this own aliases in separate medium. Her is the example of its introduction with the bean:  
+use this own aliases **(reference)** in separate medium. Her is the example of its introduction with the bean:  
 
 
 ```mxml
@@ -21,8 +21,8 @@ In this case, a bean (in the same container) named `fromName` may also, after th
 to as `toName`.
 
 
-In this example after the use of this aliases we can refer to the bean with name `myApp-dataSource` as `subsystemA-dataSource`  
-or as `subsystemB-dataSource`, this names can be used in subsystems for more convenient developing:  
+In this example after the use of this aliases we can refer to the bean with name `myApp-dataSource` as `subsystemA-  
+dataSource` or as `subsystemB-dataSource`, this names can be used in subsystems for more convenient developing:  
 
 
 ```mxml
