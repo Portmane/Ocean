@@ -3,15 +3,15 @@
 ### How to use the container ?
 
 As sad before container is connecting program element which compile POJOs and Metadata in fully ended 
-application. And to create the instance of container we have to create object based on this interface **ApplicationContext**  
-implementation of which can be reached by creating instances of this classes: **ClassPathXmlApplicationContext**, 
-**FileSystemXmlApplicationContext** which are implements **ApplicationContext** interface. Example of initializing such  
+application. And to create the instance of container we have to create object based on this interface `ApplicationContext`   
+implementation of which can be reached by creating instances of this classes: `ClassPathXmlApplicationContext`, 
+`FileSystemXmlApplicationContext` which are implements `ApplicationContext` interface. Example of initializing such  
 is shown below: 
 
 ```java
 ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
 ```
-The following example shows the service layer objects **services.xml** configuration file:
+The following example shows the service layer objects `services.xml` configuration file:
 ```mxml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -31,7 +31,7 @@ The following example shows the service layer objects **services.xml** configura
 
 </beans>
 ```
-The following example shows the data access objects **daos.xml** file:
+The following example shows the data access objects `daos.xml` file:
 ```mxml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -52,20 +52,20 @@ The following example shows the data access objects **daos.xml** file:
 
 </beans>
 ```
-In this example we create container **context** where we get in over view two xml files one of which is  
+In this example we create container `context` where we get in over view two xml files one of which is  
 service layer and another is data access file where we are accessing into two classes(based on the JPA Object-Relational  
-Mapping standard). Where in **services.xml** file we can see:
-* Bean with its own elements such as **id** and **class**, where value of **class** will be connected with said class.
-* The property's **name** element refers to the name of the JavaBean property.
-* The **ref** element refers to another bean definition.
+Mapping standard). Where in `services.xml` file we can see:
+* Bean with its own elements such as `id` and `class`, where value of `class` will be connected with said class.
+* The property's `name` element refers to the name of the JavaBean property.
+* The `ref` element refers to another bean definition.
 
-In **daos.xml** file we can see: 
-* Beans with their values of **id** and **class** elements, where value of **id** element uses in service layer  
-(**services.xml**) to refer to the exist bean, and **class** value connecting bean with selected class.
+In `daos.xml` file we can see: 
+* Beans with their values of `id` and `class` elements, where value of `d` element uses in service layer  
+(`services.xml`) to refer to the exist bean, and class` value connecting bean with selected class.
 
 ### Composing XML-based Configuration Metadata
 In preceding example we have been creating the environment with help of container and because of this, over service layer fi-  
-le could access beans from data file. But we also can access them through the use of **import** statement there you will use rela-  
+le could access beans from data file. But we also can access them through the use of `import` statement there you will use rela-  
 tive paths to get existing beans from files. The following example shows how to do so:  
 ```mxml
 <beans>
