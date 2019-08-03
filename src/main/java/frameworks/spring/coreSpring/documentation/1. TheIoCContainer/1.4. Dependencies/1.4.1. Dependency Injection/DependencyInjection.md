@@ -1,7 +1,7 @@
-# Dependency Injection
+# Dependency Injection  
 
 
-### About
+### About  
 Dependency injection (DI) is a process whereby objects define their dependencies only through constructor arguments,  
 arguments to a factory method, or properties that are set on the object instance after it is constructed or returned  
 from a factory method. Code of DI is more clear and decoupling is more effective when objects are provided with their  
@@ -32,7 +32,7 @@ public class SimpleMovieLister {
 Notice that there is nothing special about this class. It is a POJO that has no dependencies on container specific inter-  
 faces, base classes or annotations.  
 
-### Constructor Argument Resolution
+### Constructor Argument Resolution  
 Matching of Spring(beans) and Java constructor arguments is accomplished with type value. If no potential ambiguity exists in  
 the constructor arguments of a bean definition(such as `int.. name` arguments etc.), the order in which arguments are supp-  
 lide in the bean will be the order in which arguments will be supplied to bean initializer(constructor). Consider the fo-  
@@ -94,7 +94,7 @@ public class ExampleBean {
 ```
 
 
-*Constructor argument type matching*
+*Constructor argument type matching*  
 In the preceding scenario, the container can use type matching with simple types if you explicitly specify the type of  
 the constructor argument by using the `type` attribute. as the following example shows:  
 
@@ -107,7 +107,7 @@ the constructor argument by using the `type` attribute. as the following example
 ```
 
 
-*Constructor argument index*
+*Constructor argument index*  
 You can use the index attribute to specify explicitly the index of constructor arguments, as the following example shows:  
 
 
@@ -123,4 +123,72 @@ In addition to resolving the ambiguity of multiple simple values, specifying an 
 ctor has two arguments of the same type.  
 >The index is 0-based.
 
-*Constructor argument name*
+*Constructor argument name*  
+You can use `name` attribute of `<constructor-arg />` where value of this attribute will be the same with constructor para-  
+meter name to which `value` will assign, as the following example shows:  
+
+
+```mxml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg name="years" value="7500000"/>
+    <constructor-arg name="ultimateAnswer" value="42"/>
+</bean>
+```
+
+
+Keep in mind that, to make this work out of the box, your code must be compiled with the debug flag enabled so that Spri-  
+ng can look up the parameter name from the constructor. If you cannot or do not want to compile your code with the debug  
+flag, you can use the @ConstructorProperties JDK annotation to explicitly name your constructor arguments. The sample  
+class would then have to look as follows:  
+
+
+```java
+package examples;
+
+public class ExampleBean {
+
+    // Fields omitted
+
+    @ConstructorProperties({"years", "ultimateAnswer"})
+    public ExampleBean(int years, String ultimateAnswer) {
+        this.years = years;
+        this.ultimateAnswer = ultimateAnswer;
+    }
+}
+```
+
+
+### Setter-based Dependency Injection  
+Setter-base DI is accomplished by calling setter methods on already initialized bean which have been created by using of  
+`static` factory method or (no-argument constructor/with constructor-based DI approach). This example shows us simple Ja-  
+va POJO which can be DI only by using of Setter-based DI:  
+
+
+```java
+public class SimpleMovieLister {
+
+    // the SimpleMovieLister has a dependency on the MovieFinder
+    private MovieFinder movieFinder;
+
+    // a setter method so that the Spring container can inject a MovieFinder
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // business logic that actually uses the injected MovieFinder is omitted...
+}
+```
+
+
+The `ApplicationContext` The ApplicationContext supports constructor-based and setter-based DI for the beans it manages.  
+It also supports setter-based DI on bean which have been already initialized with constructor based approach.
+
+### Constructor-based or setter-based DI ?  
+We know that we can mix constructor approach with setter-based DI which give us the opportunity to set the main and minor  
+dependencies where main dependencies all the same can be changed by using of set methods. But by all the way from this leads  
+that setter-based DI primary uses for optional dependencies. The Spring team generally advocates constructor injection,  
+as it lets you implement application components as immutable objects and ensures that required dependencies are not `null`.  
+But despite this use the DI style that makes the most sense for a particular class. For example if you have third-party  
+class which does't expose any setter methods, then constructor injection may be the only available form of DI.  
+
+### Dependency Resolution Process  
