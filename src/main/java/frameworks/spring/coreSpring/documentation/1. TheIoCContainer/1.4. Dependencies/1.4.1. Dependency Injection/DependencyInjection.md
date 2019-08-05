@@ -183,7 +183,7 @@ public class SimpleMovieLister {
 The `ApplicationContext` The ApplicationContext supports constructor-based and setter-based DI for the beans it manages.  
 It also supports setter-based DI on bean which have been already initialized with constructor based approach.
 
-### Constructor-based or setter-based DI ?  
+## Constructor-based or setter-based DI ?  
 We know that we can mix constructor approach with setter-based DI which give us the opportunity to set the main and minor  
 dependencies where main dependencies all the same can be changed by using of set methods. But by all the way from this leads  
 that setter-based DI primary uses for optional dependencies. The Spring team generally advocates constructor injection,  
@@ -192,3 +192,185 @@ But despite this use the DI style that makes the most sense for a particular cla
 class which does't expose any setter methods, then constructor injection may be the only available form of DI.  
 
 ### Dependency Resolution Process  
+The container performs bean dependency resolution as follows:  
+* The `ApplicationContext` is created and initialized with configuration metadata that describes all the beans. Configura-  
+tion metadata can be specified by XML, Java code, or annotations.  
+* Each bean have its own dependencies in form of properties, constructor arguments, or arguments to the static-factory me-  
+thod. These dependencies are provided to the bean, when the bean is actually created.  
+* Each property or constructor argument is an actual definition of the value to set, or a reference to another bean in the  
+container.  
+* Each property or constructor argument that is a value, converts to the actual type of constructor parameter. By de-  
+fault, Spring can convert a value supplied in string format to all built-in types, such as `int`, `long`, `String`, boolean,  
+and so forth.  
+## Circular dependencies  
+
+
+### Examples of Dependency Injection  
+If you use predominantly constructor injection, it is possible to create an unresolvable circular dependency scenario.  
+For example: class A requires class B through constructor DI which(B) requires class A through constructor DI. And if you  
+will try to initialize one of this beans, Spring IoC container will detect this circular reference at runtime and will  
+through a `BeanCurrentlyInCreationException`. One possible solution is to edit one of existing bean source code and make  
+it rather setter-based DI than constructor DI principle. Alternatively, avoid constructor injection and use setter injec-  
+tion only. In other words, although it is not recommended, you can configure circular dependencies with setter injection.  
+> Unlike the typical case (with no circular dependencies), a circular dependency between bean A and bean B forces one of  
+the beans to be injected into the other prior to being fully initialized itself (a classic chicken-and-egg scenario).  
+
+>Next peace of text I can hardly understand, soo i will push it in source version to give you full information coverage.
+
+*You can generally trust Spring to do the right thing. It detects configuration problems, such as references to non-exis-  
+tent beans and circular dependencies, at container load-time. Spring sets properties and resolves dependencies as late as  
+possible, when the bean is actually created. This means that a Spring container that has loaded correctly can later generate  
+an exception when you request an object if there is a problem creating that object or one of its dependencies — for example,  
+the bean throws an exception as a result of a missing or invalid property. This potentially delayed visibility of some confi- 
+guration issues is why ApplicationContext implementations by default pre-instantiate singleton beans. At the cost of some  
+upfront time and memory to create these beans before they are actually needed, you discover configuration issues when the  
+ApplicationContext is created, not later. You can still override this default behavior so that singleton beans initialize  
+lazily, rather than being pre-instantiated. If no circular dependencies exist, when one or more collaborating beans are  
+being injected into a dependent bean, each collaborating bean is totally configured prior to being injected into the depen-  
+dent bean. This means that, if bean A has a dependency on bean B, the Spring IoC container completely configures bean B  
+prior to invoking the setter method on bean A. In other words, the bean is instantiated (if it is not a pre-instantiated  
+singleton), its dependencies are set, and the relevant lifecycle methods (such as a configured init method or the Initiali-  
+zingBean callback method) are invoked.*  
+
+### Examples of Dependency Injection  
+The following example uses XML-based configuration metadata for setter-based DI. A small part of a Spring XML configuration  
+file specifies some bean definitions as follows:  
+
+
+```mxml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <!-- setter injection using the nested ref element -->
+    <property name="beanOne">
+        <ref bean="anotherExampleBean"/>
+    </property>
+
+    <!-- setter injection using the neater ref attribute -->
+    <property name="beanTwo" ref="yetAnotherBean"/>
+    <property name="integerProperty" value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+```
+
+
+The following example shows the corresponding `ExampleBean` class:  
+
+
+```java
+public class ExampleBean {
+
+    private AnotherBean beanOne;
+
+    private YetAnotherBean beanTwo;
+
+    private int i;
+
+    public void setBeanOne(AnotherBean beanOne) {
+        this.beanOne = beanOne;
+    }
+
+    public void setBeanTwo(YetAnotherBean beanTwo) {
+        this.beanTwo = beanTwo;
+    }
+
+    public void setIntegerProperty(int i) {
+        this.i = i;
+    }
+}
+```
+
+
+In the preceding example, setters are declared to match against the properties specified in the XML file. The following  
+example uses constructor-based DI:  
+
+
+```mxml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <!-- constructor injection using the nested ref element -->
+    <constructor-arg>
+        <ref bean="anotherExampleBean"/>
+    </constructor-arg>
+
+    <!-- constructor injection using the neater ref attribute -->
+    <constructor-arg ref="yetAnotherBean"/>
+
+    <constructor-arg type="int" value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+```
+
+
+The following example shows the corresponding `ExampleBean` class:  
+
+
+```java
+public class ExampleBean {
+
+    private AnotherBean beanOne;
+
+    private YetAnotherBean beanTwo;
+
+    private int i;
+
+    public ExampleBean(
+        AnotherBean anotherBean, YetAnotherBean yetAnotherBean, int i) {
+        this.beanOne = anotherBean;
+        this.beanTwo = yetAnotherBean;
+        this.i = i;
+    }
+}
+```
+
+
+The constructor arguments specified in the bean definition are used as arguments to the constructor of the `ExampleBean`.  
+Now consider a variant of this example, where, instead of using a constructor, Spring is told to call a static factory   
+method to return an instance of the object:  
+
+
+```mxml
+<bean id="exampleBean" class="examples.ExampleBean" factory-method="createInstance">
+    <constructor-arg ref="anotherExampleBean"/>
+    <constructor-arg ref="yetAnotherBean"/>
+    <constructor-arg value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+```
+
+
+The following example shows the corresponding `ExampleBean` class:  
+
+
+```java
+public class ExampleBean {
+
+    // a private constructor
+    private ExampleBean(...) {
+        ...
+    }
+
+    // a static factory method; the arguments to this method can be
+    // considered the dependencies of the bean that is returned,
+    // regardless of how those arguments are actually used.
+    public static ExampleBean createInstance (
+        AnotherBean anotherBean, YetAnotherBean yetAnotherBean, int i) {
+
+        ExampleBean eb = new ExampleBean (...);
+        // some other operations...
+        return eb;
+    }
+}
+```
+
+
+Arguments to the static factory method are supplied by `<constructor-arg/>` tag, exactly the same if a constructor DI had  
+actually been used. The type of the class being returned by the factory method does not have to be of the same type as  
+the class that contains the `static` factory method (although, in this example, it is).  
+>An instance (non-static) factory method can be used in an essentially identical fashion (aside from the use of the fac-  
+tory-bean attribute instead of the class attribute), so we do not discuss those details here.  
+
+>Information has been taken from [her](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html).  
