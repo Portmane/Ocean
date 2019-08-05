@@ -53,7 +53,7 @@ public class ThingOne {
 
 In this example ThingTwo and ThingThree are not related by inheritance. We also don't have any ambiguity in order of const-  
 ructor arguments. Thus, this example works fine and don't have to specify the constructor argument indexes or type values  
-explicitly in the <constructor-arg/> tag.  
+explicitly in the <constructor-arg/> element.  
 
 
 ```mxml
@@ -367,9 +367,9 @@ public class ExampleBean {
 ```
 
 
-Arguments to the static factory method are supplied by `<constructor-arg/>` tag, exactly the same if a constructor DI had  
-actually been used. The type of the class being returned by the factory method does not have to be of the same type as  
-the class that contains the `static` factory method (although, in this example, it is).  
+Arguments to the static factory method are supplied by `<constructor-arg/>` element, exactly the same if a constructor DI  
+had actually been used. The type of the class being returned by the factory method does not have to be of the same type  
+as the class that contains the `static` factory method (although, in this example, it is).  
 >An instance (non-static) factory method can be used in an essentially identical fashion (aside from the use of the fac-  
 tory-bean attribute instead of the class attribute), so we do not discuss those details here.  
 
