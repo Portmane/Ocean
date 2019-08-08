@@ -278,3 +278,21 @@ The following example demonstrates collection merging:
 ```
 
 
+Notice the use of `merge = true` attribute on `<props/>` element of the `adminEmails` property of the `child` bean definition.  
+When the container initialize the `child` bean, the bean will get the `parent` properties with actual result of sets and  
+merging (merging of the `parent` and `child` bean). Here you can see the final example of merging:  
+
+
+```
+administrator=administrator@example.com
+sales=sales@example.com
+support=support@example.co.uk
+```
+
+
+The `child` element inherits all `Properties` collection’s value from `parent` bean and adds one (`<prop key="sales">sale-  
+s@example.com</prop>`), with overriding one of existing(`<prop key="support">support@example.co.uk</prop>`).  
+This merging behavior applies similarly to the `<list/>`, `<map/>`, and `<set/>`collection types. In the case of the `Map`,  
+`Set`, and `Properties` collection types, no ordering(*semantic*) exists as in `<list/>` element.  
+>Semantic - that is, the notion of an ordered collection of values in the collection.  
+***Limitations of Collection Merging***  
