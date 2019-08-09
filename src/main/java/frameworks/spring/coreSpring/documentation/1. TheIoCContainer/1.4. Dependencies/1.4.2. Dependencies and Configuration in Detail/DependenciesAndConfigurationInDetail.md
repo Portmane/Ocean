@@ -295,4 +295,45 @@ s@example.com</prop>`), with overriding one of existing(`<prop key="support">sup
 This merging behavior applies similarly to the `<list/>`, `<map/>`, and `<set/>`collection types. In the case of the `Map`,  
 `Set`, and `Properties` collection types, no ordering(*semantic*) exists as in `<list/>` element.  
 >Semantic - that is, the notion of an ordered collection of values in the collection.  
+
 ***Limitations of Collection Merging***  
+You cannot merge different collection types (such as a `Map` and a `List`). If you do attempt to do so, an appropriate `Excep-  
+tion` is thrown. The `merge` attribute must be specified on the lower, inherited, child definition. Specifying the merge  
+attribute on a parent collection definition is redundant and does not result in the desired merging.  
+***Strongly-typed collection***  
+With the introduction of generic types in Java 5, you can use strongly typed collections. If you use Spring to DI the stron-  
+gly-typed `Collection`, when in proses of injection the bean it will connect generics of strongly-typed `Collection` and  
+will use them for type-conversion of bean values to actual of the variable. Here is the example:  
+
+
+```java
+public class SomeClass {
+
+    private Map<String, Float> accounts;
+
+    public void setAccounts(Map<String, Float> accounts) {
+        this.accounts = accounts;
+    }
+}
+```
+
+```mxml
+<beans>
+    <bean id="something" class="x.y.SomeClass">
+        <property name="accounts">
+            <map>
+                <entry key="one" value="9.99"/>
+                <entry key="two" value="2.75"/>
+                <entry key="six" value="3.99"/>
+            </map>
+        </property>
+    </bean>
+</beans>
+```
+
+
+In the process of initialization of the `accounts` property of `something` bean, the Spring will get generic values of  
+`acoounts` variable (`private Map<String, Float> accounts;`) and will use them for type-conversion with values of bean for  
+DI of the strongly-typed `Collection`.  
+
+### Null and Empty String Values  
