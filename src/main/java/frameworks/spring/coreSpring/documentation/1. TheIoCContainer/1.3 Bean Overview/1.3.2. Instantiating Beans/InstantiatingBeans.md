@@ -1,35 +1,36 @@
 # Instantiating Beans
 
 
-###For what bean is needed ?
-A bean definition is essentially a recipe that is needed to create one or more objects. The container is looking for enca-  
-psulated data(in **bean** by attributes as **class** etc.) and with help of it creates (or acquire) an actual object.  
+### For what bean is needed ?
+A bean definition is essentially a recipe that is needed to create one or more objects. The container is looking for  
+encapsulated data(in **bean** by attributes as **class** etc.) and with help of it creates (or acquire) an actual  
+object.  
 
-
-###Class attribute in the bean definition
+### Class attribute in the bean definition
 In XML - based configuration when you are creating the bean you specify the type(or class) in `class` attribute of the  
-`<bean/>` tag which will be represented by this bean. Value of `class` attribute is usually mandatory and it is stored in  
-`Class` property of a `BeanDefinition` instance. You can use the Class property in one of two ways:
+`<bean/>` tag which will be represented by this bean. Value of `class` attribute is usually mandatory and it is stored  
+in `Class` property of a `BeanDefinition` instance. You can use the Class property in one of two ways:  
 
-* Typically, to specify the bean class to be constructed in the case where the container itself directly creates the bean  
-by calling its constructor reflectively, somewhat equivalent to Java code with the `new` operator.
+* Typically, to specify the bean class to be constructed in the case where the container itself directly creates the  
+bean by calling its constructor reflectively, somewhat equivalent to Java code with the `new` operator.
 * To specify the actual class containing the `static` factory method that is invoked to create the object, in the less  
-common case where the container invokes a `static` factory method on a class to create the bean. The object type returned  
-from the invocation of the `static` factory method may be the same class or another class entirely.  
+common case where the container invokes a `static` factory method on a class to create the bean. The object type  
+returned from the invocation of the `static` factory method may be the same class or another class entirely.  
 
 >Inner class names
-If you want to configure a bean definition for a static nested class, you have to use the binary name of the nested class.  
-For example, if you have a class called SomeThing in the com.example package, and this SomeThing class has a static  
-nested class called OtherThing, the value of the class attribute on a bean definition would be com.example.SomeThing$OtherThing.  
+If you want to configure a bean definition for a static nested class, you have to use the binary name of the nested  
+class. For example, if you have a class called SomeThing in the com.example package, and this SomeThing class has a  
+static nested class called OtherThing, the value of the class attribute on a bean definition would be `com.example.  
+SomeThing$OtherThing`.  
 
->Notice the use of the $ character in the name to separate the nested class name from the outer class name.  
+>Notice the use of the `$` character in the name to separate the nested class name from the outer class name.  
 
 
 ### Instantiation with a Constructor
-When you create a bean by the constructor approach, all normal classes are usable by and compatible with Spring. It is mean  
-that class that is developer doesnt need to implement any specific interfaces or to be coded in a specific fashion. Simply  
-specifying the bean class should suffice. It is also not limited to manage true JavaBean classes only. With XML-based con-  
-figuration metadata you can specify your bean class as follows:  
+When you create a bean by the constructor approach, all normal classes are usable by and compatible with Spring. It is  
+mean that class that is developer doesnt need to implement any specific interfaces or to be coded in a specific fashion.  
+Simply specifying the bean class should suffice. It is also not limited to manage true JavaBean classes only. With XML-  
+based configuration metadata you can specify your bean class as follows:  
 
 
 ```mxml
@@ -40,7 +41,8 @@ figuration metadata you can specify your bean class as follows:
 
 
 For details about the mechanism for supplying arguments to the constructor (if required) and setting object instance  
-properties after the object is constructed, see [Injecting Dependencies](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-factory-collaborators) (1.4.1 Dependency Injection).  
+properties after the object is constructed, see [Injecting Dependencies](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-factory-collaborators) 
+(1.4.1 Dependency Injection).  
 
 
 ### Instantiation with a Static Factory Method
