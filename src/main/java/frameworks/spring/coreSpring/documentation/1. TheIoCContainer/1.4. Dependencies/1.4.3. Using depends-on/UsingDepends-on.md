@@ -28,7 +28,7 @@ commas, whitespace, and semicolons are valid delimiters):
 
 
 >The depends-on attribute can specify both an initialization-time dependency and, in the case of singleton beans only,  
-a time when the bean will be destroyed. Dependent beans that define a `depends-on` relationship with a given bean are  
-destroyed first, prior to the given bean itself being destroyed. Thus, `depends-on` can also control shutdown order.  
+a time when the bean will be destroyed. Dependent beans that define a `depends-on` relationship with a given bean  
+are destroyed first, prior to the given bean itself being destroyed. Thus, `depends-on` can also control shutdown order.  
 
 >Information has been taken from [her](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html).  
