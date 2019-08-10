@@ -6,8 +6,8 @@ can use `name` and `id` attributes. In `id` attribute you can specify exactly on
 in alphabetic version (example: `id = "helloWorld"`). To add 2-nd or more aliases you will use `name` attribute, where you  
 will divide various versions of names with comma **(,)**, semicolon **(;)**, or **white space** (example: `name = "nameOne",  
 "nameTwo"`, `name = "nameOne"; "nameTwo`, `name = "nameOne" "nameTwo"`).
->You also don't have to specify the name for your bean, if you won't give it, bean will get automatically generated name  
-which will be linked to the bean.  
+>You also don't have to specify the name for your bean, if you won't give it, bean will get automatically generated  
+name which will be linked to the bean.  
 
 ### Aliasing a Bean outside the Bean Definition
 In metadata definition we also have one attribute (`<alias/>`) that lets us name every bean outside of bean definition to  
