@@ -7,8 +7,9 @@ automatically for your bean by inspecting the contents of the `ApplicationContex
 ### Advantages  
 Autowiring has the following advantages:  
 * Autowiring can significantly reduce the need to specify properties or constructor arguments. (Other mechanisms such  
-as a bean template ([1.7. Bean Definition Inheritance](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-child-bean-definitions))
-are also valuable in this regard.)  
+as a [bean template](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-child-bean-definitions) 
+(1.7. Bean Definition Inheritance)
+are also valuable in this regard)  
 * Autowiring can update a configuration as your objects evolve. For example, if you need to add a dependency to a  
 class, that dependency can be satisfied automatically without you needing to modify the configuration. Thus autowiring  
 can be especially useful during development, without negating the option of switching to explicit wiring when the  
@@ -51,8 +52,10 @@ In the latter scenario, you have several options:
 next section ("Excluding a Bean from Autowiring").  
 * Designate a single bean definition as the primary candidate by setting the `primary` attribute of its `<bean/>`  
 element to `true`.  
-* Implement the more fine-grained control available with annotation-based configuration, as described in Annotation-  
-based Container Configuration ("1.9. Annotation-based Container Configuration").  
+* Implement the more fine-grained control available with annotation-based configuration, as described in 
+[Annotation](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config)-  
+[based Container Configuration](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config) 
+(1.9. Annotation-based Container Configuration).  
 
 ### Excluding a Bean from Autowiring  
 On a per-bean basis, you can exclude a bean from autowiring. In Spring’s XML format, set the `autowire-candidate`  
