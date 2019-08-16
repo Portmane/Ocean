@@ -11,12 +11,13 @@ as a [bean template](https://docs.spring.io/spring/docs/current/spring-framework
 (1.7. Bean Definition Inheritance)
 are also valuable in this regard)  
 * Autowiring can update a configuration as your objects evolve. For example, if you need to add a dependency to a  
-class, that dependency can be satisfied automatically without you needing to modify the configuration. Thus autowiring  
-can be especially useful during development, without negating the option of switching to explicit wiring when the  
-code base becomes more stable.  
-When using XML-based configuration metadata, you can specify the autowire mode for a bean definition with the auto-  
-wire attribute of the <bean/> element. The autowiring functionality has four modes. You specify autowiring per bean  
-and can thus choose which ones to autowire. The following table describes the four autowiring modes:  
+class, that dependency can be satisfied automatically without you needing to modify the configuration. Thus  
+autowiring can be especially useful during development, without negating the option of switching to explicit  
+wiring  when the code base becomes more stable.  
+
+When using XML-based configuration metadata, you can specify the autowire mode for a bean definition with the  
+`autowire` attribute of the `<bean/>` element. The autowiring functionality has four modes. You specify autowiring  
+per bean and can thus choose which ones to autowire. The following table describes the four autowiring modes:  
 
 Mode | Explanation
 --- | ---
