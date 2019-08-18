@@ -152,4 +152,9 @@ See [Scoped Beans as Dependencies](https://docs.spring.io/spring/docs/current/sp
 You may also find the `ServiceLocatorFactoryBean` (in the `org.springframework.beans.factory.config` package) to  
 be useful.  
 
+### Arbitrary Method Replacement  
+>I did not go through this point due to uselessness(for me now), so i will leave 
+[link](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-factory-arbitrary-method-replacement) 
+here.  
+
 >Information has been taken from [her](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html).  
