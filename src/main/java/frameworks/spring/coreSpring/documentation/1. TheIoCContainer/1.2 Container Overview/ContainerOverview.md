@@ -25,4 +25,4 @@ which is represented in 1.12.1 of my and vanilla documentation.
    Here you can see how Spring IoC container works:
 </pre>
 ![The Spring IoC container](https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png)
->Information is taken from [her](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html).
+>Information has been taken from [her](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html).  
