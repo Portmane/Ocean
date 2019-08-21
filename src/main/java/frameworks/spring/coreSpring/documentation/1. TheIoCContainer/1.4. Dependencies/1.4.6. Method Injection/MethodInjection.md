@@ -9,14 +9,14 @@ with another singleton bean or a non-singleton bean needs to collaborate with an
 cally handle the dependency by defining one bean as a property of the other. A problem arises when the bean life-  
 cycles are different. Suppose singleton bean A needs to use non-singleton (prototype) bean B, with use of method on  
 A bean. But the container initialize A only once and have simply one opportunity to set the properties. And because  
-of this we can't get newest version of B every time we need it.  
+of this we can't get newest(changed) version of B every time we need it, unless we will use method injection.  
 A solution is to forego some inversion of control. You can 
 [make bean A aware of the container](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-factory-aware) 
 by implementing the  
 `ApplicationContextAware` interface, and by 
 [making a `getBean("B")` call to the container](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-factory-client) 
-ask for an updated (or the  
-same) version of B. The following example shows this approach:  
+ask for an updated instance  
+of B. The following example shows this approach:  
 ```java
 // a class that uses a stateful Command-style class to perform some processing
 package fiona.apple;
@@ -56,8 +56,10 @@ Injection, a somewhat advanced feature of the Spring IoC container, lets you han
 >You can read more about the motivation for Method Injection in [this blog entry](https://spring.io/blog/2004/08/06/method-injection/).
 
 #### Soo what is Method Injection ?   
-Soo `method injection` is a mechanism which is something like alternative for setter-based and constructor-based  
-DI, where  we don't have get method, but we have setter method which is linked to certain bean.  
+Soo `method injection` is a DI which exists besides setter-based and constructor-based DI's, which is need for  
+beans with different scopes. And can be used as decision in this examples:  
+* We have singleton bean A witch dependence of prototype bean B which due to its properties can be received in  
+new version only through method injection(use of method).
 
 ### Lookup Method Injection  
 Lookup method injection is the same process as standard method injection but with part of initialization of the  
