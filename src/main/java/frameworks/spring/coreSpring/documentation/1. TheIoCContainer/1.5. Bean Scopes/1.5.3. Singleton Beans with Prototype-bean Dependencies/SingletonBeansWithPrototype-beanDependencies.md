@@ -1,0 +1,3 @@
+# SingletonBeansWithPrototype-beanDependencies  
+
+### 
