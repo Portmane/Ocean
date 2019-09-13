@@ -89,6 +89,7 @@ definition for the lifetime of a single HTTP `Session`.  In other words, the `us
 vely scoped at the HTTP `Session` level. As with request-scoped beans, you can change the internal state of the  
 instance that is created as much as you want, because `userPreferences` bean returns you fully new instance every  
 time you refer to the following bean.  
+
 When using annotation-driven components or Java configuration, you can use the @SessionScope annotation to assign  
 a component to the session scope.  
 ```java
@@ -100,7 +101,7 @@ public class LoginAction {
 ```
 
 
-### Session Scope  
+### Application Scope  
 Consider the following XML configuration for a bean definition:  
 ```mxml
 <bean id="appPreferences" class="com.something.AppPreferences" scope="application"/>
