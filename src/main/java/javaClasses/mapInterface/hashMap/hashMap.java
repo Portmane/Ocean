@@ -1,4 +1,4 @@
-package javaClasses.map_interface.hashMap;
+package javaClasses.mapInterface.hashMap;
 
 
 import java.util.*;
