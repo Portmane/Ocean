@@ -24,5 +24,5 @@ Consist of explanation of Java API classes, interfaces, etc.
 Here you will see my own tasks for myself and its realizations.  
 
 ## Cooperation  
-All offers are welcome, here is my email **"..."**. Any corrections or help in Java code as well as in  
-explanations are appreciated :hugs:
+All offers are welcome, here is my email **"wh9noo@gmail.com"**. Any corrections or help in Java code as well  
+as in explanations are appreciated :hugs:
