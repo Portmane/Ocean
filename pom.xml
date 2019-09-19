@@ -28,7 +28,7 @@
     </dependencies>
 
     <build>
-        <defaultGoal>Hello World</defaultGoal>
+        <defaultGoal>validate</defaultGoal>
         <pluginManagement>
             <plugins>
                 <plugin>
