@@ -23,7 +23,7 @@ public class firstHibernateProgram {
         try {
             factory = new Configuration().configure().buildSessionFactory();    //Receiving of this sessionFactory instance.
         } catch (Throwable ex) {
-            System.err.println("Failed to create sessionFactory object." + ex);
+            System.err.println("Failed to create sessionFactory object. " + ex);
             throw new ExceptionInInitializerError(ex);                          /*Throws ExceptionInInitializerError
                                                                                 * with argument of occurred exception and
                                                                                 * can be used later with getException()
