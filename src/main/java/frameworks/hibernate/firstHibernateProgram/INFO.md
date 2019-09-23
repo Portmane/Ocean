@@ -1,17 +1,14 @@
 # First Hibernate program
 >If you are working in other IDE and this steps are completely another than  
-you are welcome to write the same for your IDE. 
+you are welcome to write the same for your IDE.  
 
->And yes, don't forget to activate the database.
+>And yes, don't forget to activate the database.  
 ## IDE's:
 * ### Intellij IDE:
-<pre>
-       First of all we have to add the project dependency of Hibernate.
-       In "Project window" (Alt + 1) view full hierarchy of project and  
-    by clicking left mouse button on your module click on "Add Framework  
-    Support" option where you will be able to add Hibernate dependency of  
-    the project automatically. (As Maven support)  
-</pre>
+First of all we have to add the project dependency of Hibernate. In "Project window" (Alt + 1) view full hierarchy  
+of project and by clicking left mouse button on your module click on "Add Framework Support" option where you will  
+be able to add Hibernate dependency of the project automatically. (As Maven support)  
+
 <pre>
        Next we have to add the Hibernate support plugin which is  
     automatically enabled in Intellij IDE. To be sure press (ctrl + alt + s) 
