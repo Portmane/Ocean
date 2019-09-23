@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 public class firstHibernate {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("org.hibernate.firstHibernateProgram", null);
-                                                            /*Creating EntityManagerFactory variable with use of name
+                                                            /*Creat EntityManagerFactory variable with use of name
                                                             of the persistence-unit in persistence.xml.*/
 
         Employee emp1 = new Employee();                     /*creating and modifying a variable.*/
