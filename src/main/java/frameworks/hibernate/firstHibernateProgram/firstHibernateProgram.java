@@ -14,6 +14,7 @@ public class firstHibernateProgram {
         Employee emp1 = new Employee();                     /*Then we create and modify the variable.*/
         emp1.setUsername("Paul");
         emp1.setPassword("1234567777");
+        emp1.setPassword("999");
         emp1.setUser_email("firstDayofthework@gmail.com");
 
 
