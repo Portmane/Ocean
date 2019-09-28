@@ -1,9 +1,7 @@
 package frameworks.spring.springBoot.tasks.WILLBERENAMEDLATER.io.javabrains.springbootstarter.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +13,7 @@ public class TopicController {
     private TopicService topicService;
 
 
+    //Get requests.
     @RequestMapping("/topics")
     public List<Topic> getAllTopics() {
         return topicService.getTopicList();
@@ -23,5 +22,27 @@ public class TopicController {
     @RequestMapping("/topics/{id}")
     public Topic getTopic(@PathVariable String id) {
         return topicService.getTopic(id);
+    }
+
+
+
+    //Post request.
+    @RequestMapping(method = RequestMethod.POST, value = "/topics")
+    public void addTopic(@RequestBody Topic topic) {
+        topicService.addTopic(topic);
+    }
+
+
+    //Update request.
+    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
+    public void updateTopic(@RequestBody Topic topic, @PathVariable String id) {
+        topicService.updateTopic(id, topic);
+    }
+
+
+    //Delete request.
+    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
+    public void deleteTopic(@PathVariable String id) {
+        topicService.deleteTopic(id);
     }
 }
