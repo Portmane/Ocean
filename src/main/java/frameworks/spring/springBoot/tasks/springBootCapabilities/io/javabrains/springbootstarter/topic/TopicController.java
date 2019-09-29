@@ -1,4 +1,4 @@
-package frameworks.spring.springBoot.tasks.WILLBERENAMEDLATER.io.javabrains.springbootstarter.topic;
+package frameworks.spring.springBoot.tasks.springBootCapabilities.io.javabrains.springbootstarter.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
