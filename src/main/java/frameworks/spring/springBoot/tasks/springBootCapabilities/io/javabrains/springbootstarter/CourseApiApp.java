@@ -1,4 +1,4 @@
-package frameworks.spring.springBoot.tasks.WILLBERENAMEDLATER.io.javabrains.springbootstarter;
+package frameworks.spring.springBoot.tasks.springBootCapabilities.io.javabrains.springbootstarter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
