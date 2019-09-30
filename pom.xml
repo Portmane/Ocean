@@ -6,7 +6,7 @@
 
     <groupId>Information</groupId>
     <artifactId>Information</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.12</version>
     <name>Java-API-items</name>
     <url>https://github.com/Portmane/Java-API-items</url>
 
@@ -43,8 +43,17 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.1.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
