@@ -1,4 +1,4 @@
-# First Hibernate program
+# First Hibernate program   <<- HAVE TO BE ENDED IN THE FUTURE. IT IS NOT WORKING ->>
 >If you are working in other IDE and this steps are completely another than  
 you are welcome to write the same for your IDE.  
 
