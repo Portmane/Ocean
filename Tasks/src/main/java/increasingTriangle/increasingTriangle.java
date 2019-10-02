@@ -1,4 +1,4 @@
-package tasks.increasingTriangle;
+package increasingTriangle;
 
 
 import javax.swing.*;
