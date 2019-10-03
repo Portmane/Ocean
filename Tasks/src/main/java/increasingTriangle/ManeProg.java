@@ -1,9 +1,8 @@
-package tasks.increasingTriangle;
+package increasingTriangle;
 
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
 
 
 public class ManeProg extends JFrame {
