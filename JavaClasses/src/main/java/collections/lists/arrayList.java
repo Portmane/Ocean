@@ -1,4 +1,4 @@
-package javaClasses.collections.lists;
+package collections.lists;
 /*  The ArrayList class implements the List interface.
 * It uses a dynamic array to store the duplicate element
 * of different data types. The ArrayList class maintains
