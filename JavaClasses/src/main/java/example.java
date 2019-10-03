@@ -1,6 +1,4 @@
-package javaClasses;
-
-public class exampler {
+public class example {
     public static void main(String[] args) {
 
     }

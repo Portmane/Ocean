@@ -1,7 +1,7 @@
-package javaClasses.collections.queue;
+package collections.queue;
 
 
-import javaClasses.collections.helper.Customer;
+import collections.helper.Customer;
 
 import java.util.*;
 

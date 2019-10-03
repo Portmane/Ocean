@@ -1,20 +1,19 @@
-package javaClasses.executor;
-
+package executor;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.concurrent.Executor;
 
 
-
 class SerialExecutor implements Executor {
     final Queue<Runnable> tasks = new ArrayDeque<>();   //Queue of Runnable objects.
-    final Executor executor;                            //Variable to witch will be assigned javaClasses.executor to perform Runnable instance.
+    final Executor executor;                            /*Variable to witch will be assigned executor to perform Runnable
+                                                        instance*/
     Runnable active;                                    //Will store value returned from tasks(local variable) Queue.
 
     SerialExecutor(Executor executor) {
         this.executor = executor;
-    }   //Assigned javaClasses.executor to local variable.
+    }   //Assigns executor to local variable.
 
     public synchronized void execute(Runnable r) {  //Overrides Executor method.
         tasks.add(() -> {   //Adding Runnable instance to Queue throw lambda expression.
@@ -43,9 +42,9 @@ public class executor {
             public void execute(Runnable command) {
                 command.run();
             }
-        };              /*Over javaClasses.executor that will be used in SerialExecutor
+        };              /*Over executor that will be used in SerialExecutor
                                                         * to execute Runnable objects. */
-        SerialExecutor se = new SerialExecutor(ex);     /*Assign ex object(javaClasses.executor) to javaClasses.executor variable in SerialExecutor
+        SerialExecutor se = new SerialExecutor(ex);     /*Assign ex object(executor) to executor variable in SerialExecutor
                                                         * class.*/
         se.execute(new Runnable() {                     //Example !!! Of using.
             @Override

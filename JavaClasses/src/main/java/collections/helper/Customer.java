@@ -1,4 +1,4 @@
-package javaClasses.collections.helper;
+package collections.helper;
 
 
 

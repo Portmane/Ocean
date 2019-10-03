@@ -1,4 +1,4 @@
-package javaClasses.collections.lists;
+package collections.lists;
 /*  Vector uses a dynamic array to store the data elements.
 * It is similar to ArrayList. However, It is synchronized
 * and contains many methods that are not the part of
