@@ -1,4 +1,4 @@
-package javaClasses.collections.lists;
+package collections.lists;
 /*  The stack is the subclass of Vector.
 * It implements the last-in-first-out data structure,
 * i.e., Stack. The stack contains all of the methods
@@ -17,7 +17,7 @@ public class stack {
          /*  Work as last-in-first-out (LIFO) only through
          * the methods that are added by Stack class.
          * The array is filling up in the same way as in the
-         * all another javaClasses.collections.*/
+         * all another collections.*/
         Stack<String> stack = new Stack<String>();
         stack.push("Ayush");
         stack.push("Garvit");
