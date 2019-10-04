@@ -1,4 +1,4 @@
-# Differences between HashMap and Hashtable in Java  
+# Difference between HashMap and Hashtable in Java  
 ### They have only 3 main difference between each over:
 1. Hashtable is synchronized, whereas HashMap is not. This makes HashMap better  
 for non-threaded applications, as unsynchronized Objects typically perform better  

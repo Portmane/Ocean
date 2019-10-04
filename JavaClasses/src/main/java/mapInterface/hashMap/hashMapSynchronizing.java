@@ -1,5 +1,4 @@
-package javaClasses.mapInterface.hashMap;
-
+package mapInterface.hashMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class hashMapSynchronizing {
     // Increment the score of a team by one
     private static void incrementTeamScore(Map<String, Integer> cricketTeamScore, String team) {
-        synchronized (cricketTeamScore) {
-            Integer score = cricketTeamScore.get(team); //Synchronized!!!
+        synchronized (cricketTeamScore) {   //Synchronized!!!
+            Integer score = cricketTeamScore.get(team);
             cricketTeamScore.put(team, score + 1);
         }
 //        Integer score = cricketTeamScore.get(team);   //UNSYNCHRONIZED!!!!

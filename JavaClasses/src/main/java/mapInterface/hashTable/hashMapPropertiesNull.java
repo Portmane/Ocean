@@ -1,4 +1,4 @@
-package javaClasses.mapInterface.hashTable;
+package mapInterface.hashTable;
 
 
 
