@@ -6,7 +6,13 @@
 
     <groupId>Information</groupId>
     <artifactId>Information</artifactId>
-    <version>0.0.13</version>
+    <packaging>pom</packaging>
+    <version>0.0.14</version>
+    <modules>
+        <module>JavaClasses</module>
+        <module>Tasks</module>
+        <module>Frameworks</module>
+    </modules>
     <name>Java-API-items</name>
 
     <url>https://github.com/Portmane/Java-API-items</url>
@@ -24,76 +30,5 @@
         <version>2.1.8.RELEASE</version>
     </parent>
     <dependencies>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.4.4.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.orm.tooling</groupId>
-            <artifactId>hibernate-enhance-maven-plugin</artifactId>
-            <version>5.4.4.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.1.8.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
-        </dependency>
     </dependencies>
-
-    <build>
-        <defaultGoal>validate</defaultGoal>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/main/resources/properties</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-
-        <!--        <resources>-->
-        <!--            <resource>-->
-        <!--                <directory>resources</directory>-->
-        <!--                <targetPath>${project.build.outputDirectory}</targetPath>-->
-        <!--                <includes>-->
-        <!--                    <include>application.properties</include>-->
-        <!--                </includes>-->
-        <!--            </resource>-->
-        <!--        </resources>-->
-    </build>
 </project>
