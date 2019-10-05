@@ -1,4 +1,4 @@
-package frameworks.spring.springBoot.tasks.springBootCapabilities.io.javabrains.springbootstarter.topic;
+package io.topic;
 
 public class Topic {
 

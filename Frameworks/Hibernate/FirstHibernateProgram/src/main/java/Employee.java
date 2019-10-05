@@ -1,7 +1,4 @@
-package frameworks.hibernate.firstHibernateProgram;
-
 import javax.persistence.*;
-
 
 
 @Entity
