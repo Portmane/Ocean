@@ -1,10 +1,10 @@
 package collections.lists;
 /*  The ArrayList class implements the List interface.
-* It uses a dynamic array to store the duplicate element
-* of different data types. The ArrayList class maintains
-* the insertion order and is non-synchronized. The elements
-* stored in the ArrayList class can be randomly accessed.
-* Consider the following example.*/
+ * It uses a dynamic array to store the duplicate element
+ * of different data types. The ArrayList class maintains
+ * the insertion order and is non-synchronized. The elements
+ * stored in the ArrayList class can be randomly accessed.
+ * Consider the following example.*/
 
 
 import java.util.ArrayList;
