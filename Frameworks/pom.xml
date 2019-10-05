@@ -13,6 +13,7 @@
     <modules>
         <module>Spring</module>
         <module>Hibernate</module>
+        <module>Spring</module>
     </modules>
 
     <properties>
