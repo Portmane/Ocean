@@ -1,8 +1,7 @@
-package frameworks.spring.springBoot.tasks.springBootCapabilities.io.javabrains.springbootstarter;
+package io;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 
 @SpringBootApplication
 public class CourseApiApp {
