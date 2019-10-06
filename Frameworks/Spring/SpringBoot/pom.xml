@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>SimpleSpringBootApp</module>
-        <module>SimpleSpringBootApp</module>
+        <module>SpringBootDataJpaApp</module>
     </modules>
 
 
