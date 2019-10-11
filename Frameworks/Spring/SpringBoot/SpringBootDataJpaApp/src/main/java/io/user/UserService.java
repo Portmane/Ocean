@@ -14,9 +14,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    private List<User> userList = new ArrayList<>(Arrays.asList(new User("spring", "Spring Framework", "Spring Framework Description"),
-                new User("java", "Core Java", "Core Java Description"),
-                new User("javascript", "JavaScript", "JavaScript Description")));
 
     //Get methods.
     public List<User> getUserList() {
@@ -25,29 +22,22 @@ public class UserService {
         .forEach(users::add);
         return users;
     }
-//    public User getUser(String id) {
-//        return userList.stream().filter(t -> t.getId().equals(id)).findFirst().get();
-//    }
+    public User getUser(String id) {
+        return userRepository.findById(id).get();
+    }
 
     //Add method.
     public void addUser(User user) {
         userRepository.save(user);
     }
 
-//    //Update method.
-//    public void updateUser(String id, User user) {
-//        for (int i = 0; i < userList.size(); i++) {
-//            User t = userList.get(i);
-//            if (t.getId().equals(id)) {
-//                userList.set(i, user);
-//                return;
-//            }
-//
-//        }
-//    }
+    //Update method.
+    public void updateUser(String id, User user) {
+        userRepository.save(user);
+    }
 
     //Delete method.
-//    public void deleteUser(String id) {
-//        userList.removeIf(t -> t.getId().equals(id));
-//    }
+    public void deleteUser(String id) {
+        userRepository.deleteById(id);
+    }
 }
