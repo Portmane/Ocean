@@ -14,35 +14,35 @@ public class UserController {
 
 
     //Get requests.
-    @RequestMapping("/topics")
+    @RequestMapping("/users")
     public List<User> getAllTopics() {
         return userService.getUserList();
     }
 
-//    @RequestMapping("/topics/{id}")
-//    public User getTopic(@PathVariable String id) {
-//        return topicService.getUser(id);
-//    }
+    @RequestMapping("/users/{id}")
+    public User getTopic(@PathVariable String id) {
+        return userService.getUser(id);
+    }
 
 
 
     //Post request.
-    @RequestMapping(method = RequestMethod.POST, value = "/topics")
+    @RequestMapping(method = RequestMethod.POST, value = "/users")
     public void addTopic(@RequestBody User user) {
         userService.addUser(user);
     }
 
 
-//    //Update request.
-//    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
-//    public void updateTopic(@RequestBody User user, @PathVariable String id) {
-//        topicService.updateUser(id, user);
-//    }
+    //Update request.
+    @RequestMapping(method = RequestMethod.PUT, value = "/users/{id}")
+    public void updateTopic(@RequestBody User user, @PathVariable String id) {
+        userService.updateUser(id, user);
+    }
 
 
-//    //Delete request.
-//    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
-//    public void deleteTopic(@PathVariable String id) {
-//        topicService.deleteUser(id);
-//    }
+    //Delete request.
+    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{id}")
+    public void deleteTopic(@PathVariable String id) {
+        userService.deleteUser(id);
+    }
 }
