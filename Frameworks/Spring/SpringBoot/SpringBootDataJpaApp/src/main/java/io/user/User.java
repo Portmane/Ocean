@@ -6,14 +6,11 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(generator = "incrementor")
-    private int id;
-    public int getId() {
+    private String id;
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(String id) {this.id = id;}
 
 
     @Column(name = "username")
@@ -64,14 +61,18 @@ public class User {
 
 
     public User() {};  //Standard object.
-    public User(String username, String password, String user_email) {
+    public User(String id, String username) {
+        this.id = id;
         this.username = username;
-        this.password = password;
-        this.user_email = user_email;
     }
-    public User(String username, String password, String user_email, String first_name, String last_name) {
-        this(username, password, user_email);
-        this.first_name = first_name;
+    public User(String id, String username, String password) {
+        this(id, username);
+        this.password = password;
+    }
+    public User(String id, String username, String password, String user_email, String first_name, String last_name) {
+        this(id, username, password);
+        this.first_name = user_email;
+        this.last_name = first_name;
         this.last_name = last_name;
     }
 }
