@@ -10,13 +10,13 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService topicService;
+    private UserService userService;
 
 
     //Get requests.
     @RequestMapping("/topics")
     public List<User> getAllTopics() {
-        return topicService.getUserList();
+        return userService.getUserList();
     }
 
 //    @RequestMapping("/topics/{id}")
@@ -29,7 +29,7 @@ public class UserController {
     //Post request.
     @RequestMapping(method = RequestMethod.POST, value = "/topics")
     public void addTopic(@RequestBody User user) {
-        topicService.addUser(user);
+        userService.addUser(user);
     }
 
 
