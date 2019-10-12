@@ -1,4 +1,4 @@
-package io.user;
+package io.pages.user;
 
 import org.springframework.data.repository.CrudRepository;
 
