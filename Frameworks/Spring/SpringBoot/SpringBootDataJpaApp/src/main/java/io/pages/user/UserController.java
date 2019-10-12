@@ -1,4 +1,4 @@
-package io.user;
+package io.pages.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
