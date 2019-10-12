@@ -1,4 +1,5 @@
-package io.user;
+package io.pages.user;
+
 import javax.persistence.*;
 
 
