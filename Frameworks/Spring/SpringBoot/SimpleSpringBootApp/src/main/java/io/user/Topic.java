@@ -1,4 +1,4 @@
-package io.topic;
+package io.user;
 
 public class Topic {
 
