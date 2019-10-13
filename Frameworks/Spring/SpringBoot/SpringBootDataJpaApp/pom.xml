@@ -3,12 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>springBoot</artifactId>
+        <artifactId>Information.frameworks.spring.springBoot</artifactId>
         <groupId>Information</groupId>
         <version>0.0.14</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>springBootDataJpaApp</artifactId>
+    <artifactId>Information.frameworks.spring.springBoot.springBootDataJpaApp</artifactId>
     <packaging>jar</packaging>
 
 
@@ -43,6 +43,19 @@
 
         <plugins>
             <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>io.DataJpa</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>3.0.0</version>
@@ -61,7 +74,6 @@
                 </executions>
             </plugin>
         </plugins>
-
         <!--        <resources>-->
         <!--            <resource>-->
         <!--                <directory>resources</directory>-->
