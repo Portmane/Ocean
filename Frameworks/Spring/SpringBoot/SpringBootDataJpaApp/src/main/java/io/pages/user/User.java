@@ -1,5 +1,7 @@
 package io.pages.user;
 
+import io.pages.group.Group;
+
 import javax.persistence.*;
 
 
@@ -12,6 +14,17 @@ public class User {
         return id;
     }
     public void setId(String id) {this.id = id;}
+
+    @ManyToOne
+    private Group group;
+    public Group getGroup() {
+        return group;
+    }
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+
 
 
     @Column(name = "username")
@@ -62,16 +75,17 @@ public class User {
 
 
     public User() {};  //Standard object.
-    public User(String id, String username) {
+    public User(String id, String username, String groupId) {
         this.id = id;
         this.username = username;
+        this.group = new Group(groupId, "", "");
     }
-    public User(String id, String username, String password) {
-        this(id, username);
+    public User(String id, String username, String groupId, String password) {
+        this(id, username, groupId);
         this.password = password;
     }
-    public User(String id, String username, String password, String user_email, String first_name, String last_name) {
-        this(id, username, password);
+    public User(String id, String username, String groupId, String password, String user_email, String first_name, String last_name) {
+        this(id, username, groupId, password);
         this.first_name = user_email;
         this.last_name = first_name;
         this.last_name = last_name;
