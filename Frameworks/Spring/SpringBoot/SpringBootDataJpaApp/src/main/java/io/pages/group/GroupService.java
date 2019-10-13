@@ -15,28 +15,28 @@ public class GroupService {
 
 
     //Get methods.
-    public List<Group> getUserList() {
+    public List<Group> getAllGroups() {
         List<Group> groups = new ArrayList<>();
         groupRepository.findAll()
         .forEach(groups::add);
         return groups;
     }
-    public Group getUser(String id) {
+    public Group getGroup(String id) {
         return groupRepository.findById(id).get();
     }
 
     //Add method.
-    public void addUser(Group group) {
+    public void addGroup(Group group) {
         groupRepository.save(group);
     }
 
     //Update method.
-    public void updateUser(String id, Group group) {
+    public void updateGroup(String id, Group group) {
         groupRepository.save(group);
     }
 
     //Delete method.
-    public void deleteUser(String id) {
+    public void deleteGroup(String id) {
         groupRepository.deleteById(id);
     }
 }
