@@ -1,5 +1,6 @@
 package io.pages.user;
 
+import io.pages.group.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,36 +14,39 @@ public class UserController {
     private UserService userService;
 
 
-    //Get requests.
-    @RequestMapping("/users")
-    public List<User> getAllTopics() {
-        return userService.getUserList();
+    //Get all users requests.
+    @RequestMapping("/groups/{id}/users")
+    public List<User> getAllUsers(@PathVariable String id) {
+        return userService.getAllUsers(id);
     }
 
-    @RequestMapping("/users/{id}")
-    public User getTopic(@PathVariable String id) {
+    //Get user request.
+    @RequestMapping("/groups/{groupcId}/users/{id}")
+    public User getUser(@PathVariable String id) {
         return userService.getUser(id);
     }
 
 
 
     //Post request.
-    @RequestMapping(method = RequestMethod.POST, value = "/users")
-    public void addTopic(@RequestBody User user) {
+    @RequestMapping(method = RequestMethod.POST, value = "/groups/{groupId}/users")
+    public void addUser(@RequestBody User user, @PathVariable String groupId) {
+        user.setGroup(new Group(groupId, "", ""));
         userService.addUser(user);
     }
 
 
     //Update request.
-    @RequestMapping(method = RequestMethod.PUT, value = "/users/{id}")
-    public void updateTopic(@RequestBody User user, @PathVariable String id) {
-        userService.updateUser(id, user);
+    @RequestMapping(method = RequestMethod.PUT, value = "/groups/{groupId}/users/{id}")
+    public void updateUser(@RequestBody User user, @PathVariable String id, @PathVariable String groupId) {
+        user.setGroup(new Group(groupId, "", ""));
+        userService.updateUser(user);
     }
 
 
     //Delete request.
-    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{id}")
-    public void deleteTopic(@PathVariable String id) {
+    @RequestMapping(method = RequestMethod.DELETE, value = "/groups/{groupId}/users/{id}")
+    public void deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
     }
 }
