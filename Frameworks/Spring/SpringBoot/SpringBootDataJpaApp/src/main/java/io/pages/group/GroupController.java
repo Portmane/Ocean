@@ -15,34 +15,34 @@ public class GroupController {
 
     //Get requests.
     @RequestMapping("/groups")
-    public List<Group> getAllTopics() {
-        return groupService.getUserList();
+    public List<Group> getAllGroups() {
+        return groupService.getAllGroups();
     }
 
     @RequestMapping("/groups/{id}")
-    public Group getTopic(@PathVariable String id) {
-        return groupService.getUser(id);
+    public Group getGroup(@PathVariable String id) {
+        return groupService.getGroup(id);
     }
 
 
 
     //Post request.
     @RequestMapping(method = RequestMethod.POST, value = "/groups")
-    public void addTopic(@RequestBody Group group) {
-        groupService.addUser(group);
+    public void addGroup(@RequestBody Group group) {
+        groupService.addGroup(group);
     }
 
 
     //Update request.
     @RequestMapping(method = RequestMethod.PUT, value = "/groups/{id}")
-    public void updateTopic(@RequestBody Group group, @PathVariable String id) {
-        groupService.updateUser(id, group);
+    public void updateGroup(@RequestBody Group group, @PathVariable String id) {
+        groupService.updateGroup(id, group);
     }
 
 
     //Delete request.
     @RequestMapping(method = RequestMethod.DELETE, value = "/groups/{id}")
-    public void deleteTopic(@PathVariable String id) {
-        groupService.deleteUser(id);
+    public void deleteGroup(@PathVariable String id) {
+        groupService.deleteGroup(id);
     }
 }
