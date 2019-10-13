@@ -1,5 +1,5 @@
 # Java-API-items
-NOTE: This project have its main branch called as "master" where you can see final elements of packages or  
+NOTE: This project have its main branch called as "master" where you can see final elements of modules or  
 parts of them. Another branches are use as transitions between creating of chips and essential introduction  
 them to the main branch.  
 
@@ -15,7 +15,7 @@ Frameworks. All project is divided on three main parts:
 * Tasks  
 
 ### Frameworks  
-In Frameworks package you will find simple compilations and use of the specified framework as well as its chips.  
+In Frameworks module you will find simple compilations and use of the specified framework as well as its chips.  
 
 ### JavaClasses  
 Consist of explanation of Java API classes, interfaces, etc.  
