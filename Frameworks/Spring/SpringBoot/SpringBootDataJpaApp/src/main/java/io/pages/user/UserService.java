@@ -15,9 +15,9 @@ public class UserService {
 
 
     //Get methods.
-    public List<User> getUserList() {
+    public List<User> getAllUsers(String groupId) {
         List<User> users = new ArrayList<>();
-        userRepository.findAll()
+        userRepository.findByGroupId(groupId)
         .forEach(users::add);
         return users;
     }
@@ -31,7 +31,7 @@ public class UserService {
     }
 
     //Update method.
-    public void updateUser(String id, User user) {
+    public void updateUser(User user) {
         userRepository.save(user);
     }
 
