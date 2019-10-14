@@ -10,6 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>Information.frameworks.spring.springBoot.springBootDataJpaApp</artifactId>
     <packaging>jar</packaging>
+    <properties>
+        <java.version>13</java.version>
+    </properties>
 
 
     <dependencies>
@@ -23,8 +26,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derby</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
@@ -42,6 +45,10 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
             <plugin>
                 <!-- Build an executable JAR -->
                 <groupId>org.apache.maven.plugins</groupId>
