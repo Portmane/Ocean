@@ -1,7 +1,5 @@
 package io.pages.user;
 
-import io.pages.group.Group;
-
 import javax.persistence.*;
 
 
@@ -9,19 +7,20 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
     @Id
+    @Column(name = "user_id")
     private String id;
     public String getId() {
         return id;
     }
     public void setId(String id) {this.id = id;}
 
-    @ManyToOne
-    private Group group;
-    public Group getGroup() {
-        return group;
+    @Column(name = "groups")
+    private String groups;
+    public String getGroups() {
+        return groups;
     }
-    public void setGroup(Group group) {
-        this.group = group;
+    public void setGroups(String groups) {
+        this.groups = groups;
     }
 
 
@@ -78,7 +77,7 @@ public class User {
     public User(String id, String username, String groupId) {
         this.id = id;
         this.username = username;
-        this.group = new Group(groupId, "", "");
+        this.groups = groupId;
     }
     public User(String id, String username, String groupId, String password) {
         this(id, username, groupId);

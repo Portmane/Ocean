@@ -16,10 +16,7 @@ public class UserService {
 
     //Get methods.
     public List<User> getAllUsers(String groupId) {
-        List<User> users = new ArrayList<>();
-        userRepository.findByGroupId(groupId)
-        .forEach(users::add);
-        return users;
+        return userRepository.findByGroups(groupId);
     }
     public User getUser(String id) {
         return userRepository.findById(id).get();
