@@ -1,6 +1,5 @@
 package io.pages.user;
 
-import io.pages.group.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +20,7 @@ public class UserController {
     }
 
     //Get user request.
-    @RequestMapping("/groups/{groupcId}/users/{id}")
+    @RequestMapping("/groups/{groupId}/users/{id}")
     public User getUser(@PathVariable String id) {
         return userService.getUser(id);
     }
@@ -31,15 +30,15 @@ public class UserController {
     //Post request.
     @RequestMapping(method = RequestMethod.POST, value = "/groups/{groupId}/users")
     public void addUser(@RequestBody User user, @PathVariable String groupId) {
-        user.setGroup(new Group(groupId, "", ""));
+        user.setGroups(groupId);
         userService.addUser(user);
     }
 
 
     //Update request.
     @RequestMapping(method = RequestMethod.PUT, value = "/groups/{groupId}/users/{id}")
-    public void updateUser(@RequestBody User user, @PathVariable String id, @PathVariable String groupId) {
-        user.setGroup(new Group(groupId, "", ""));
+    public void updateUser(@RequestBody User user, @PathVariable String groupId) {
+        user.setGroups(groupId);
         userService.updateUser(user);
     }
 
