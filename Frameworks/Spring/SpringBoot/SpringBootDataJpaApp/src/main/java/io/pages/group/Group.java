@@ -7,9 +7,10 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "group")
+@Table(name = "groups")
 public class Group {
     @Id
+    @Column(name = "group_id")
     private String id;
     public String getId() {
         return id;
