@@ -8,11 +8,14 @@
         <version>0.0.14</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>tasks</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>Information.tasks</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>My</module>
+    </modules>
 
     <properties>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
+        <maven.compiler.source>13</maven.compiler.source>
+        <maven.compiler.target>13</maven.compiler.target>
     </properties>
 </project>
