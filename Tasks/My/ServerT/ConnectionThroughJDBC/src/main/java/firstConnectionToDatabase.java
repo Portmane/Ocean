@@ -1,8 +1,4 @@
-package tasksByServer.connectionThroughJDBC;
-
-
 import java.sql.*;
-
 
 
 public class firstConnectionToDatabase {
