@@ -1,6 +1,3 @@
-package increasingTriangle;
-
-
 import javax.swing.*;
 public class increasingTriangle {
     public static void main(String[] args) {
