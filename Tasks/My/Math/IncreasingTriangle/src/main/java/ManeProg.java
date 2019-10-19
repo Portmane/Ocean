@@ -1,6 +1,3 @@
-package increasingTriangle;
-
-
 import javax.swing.*;
 import java.awt.*;
 
