@@ -33,7 +33,6 @@
     </dependencies>
 
     <build>
-        <defaultGoal>validate</defaultGoal>
         <pluginManagement>
             <plugins>
                 <plugin>
