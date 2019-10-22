@@ -14,7 +14,7 @@
     <modules>
         <module>SimpleSpringBootApp</module>
         <module>SpringBootDataJpaApp</module>
-        <module>REST-API</module>
+        <module>REST-APP</module>
     </modules>
 
 
