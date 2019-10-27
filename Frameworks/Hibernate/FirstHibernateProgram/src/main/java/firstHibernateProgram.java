@@ -1,3 +1,5 @@
+import org.hibernate.SessionFactory;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,13 +16,23 @@ public class firstHibernateProgram {
         emp1.setPassword("1234567777");
         emp1.setPassword("999");
         emp1.setUser_email("firstDayofthework@gmail.com");
+        Employee emp2 = new Employee();                     /*Then we create and modify the variable.*/
+        emp2.setUsername("Paul123");
+        emp2.setPassword("1234567777123");
+        emp2.setPassword("999123");
+        emp2.setUser_email("firstDayofthework@gmail.com123");
 
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();   /*Creates EntityManager(session)
                                                             which will be used as controller for future changes in data-
                                                             base.*/
+        //Integer minimalIdValue = entityManager.createQuery("SELECT COUNT(\" id \") FROM users").executeUpdate();
+        //(Integer) entityManager.SQLqu("SELECT COUNT(`id`) FROM users").uniqu
+
+        //System.out.println(minimalIdValue);
         entityManager.getTransaction().begin();             /*Gets the current transaction and stat it.*/
         entityManager.persist(emp1);                        /*Modifies the future commit.*/
+        entityManager.persist(emp2);                        /*Modifies the future commit.*/
         entityManager.getTransaction().commit();            /*Gets the transaction and commit all changes made during
                                                             the thread process.*/
 
