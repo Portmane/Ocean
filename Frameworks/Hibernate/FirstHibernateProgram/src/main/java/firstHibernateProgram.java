@@ -1,8 +1,7 @@
-import org.hibernate.SessionFactory;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 
 public class firstHibernateProgram {
@@ -26,15 +25,20 @@ public class firstHibernateProgram {
         EntityManager entityManager = entityManagerFactory.createEntityManager();   /*Creates EntityManager(session)
                                                             which will be used as controller for future changes in data-
                                                             base.*/
+        Query query = entityManager.createNativeQuery("SELECT COUNT(a.id) from users a");
+        Object minimalIdValue = query.getSingleResult();
         //Integer minimalIdValue = entityManager.createQuery("SELECT COUNT(\" id \") FROM users").executeUpdate();
         //(Integer) entityManager.SQLqu("SELECT COUNT(`id`) FROM users").uniqu
 
-        //System.out.println(minimalIdValue);
+        System.out.println(minimalIdValue);
         entityManager.getTransaction().begin();             /*Gets the current transaction and stat it.*/
         entityManager.persist(emp1);                        /*Modifies the future commit.*/
         entityManager.persist(emp2);                        /*Modifies the future commit.*/
         entityManager.getTransaction().commit();            /*Gets the transaction and commit all changes made during
                                                             the thread process.*/
+        Query query2 = entityManager.createNativeQuery("SELECT COUNT(a.id) from users a");
+        Object minimalIdValue2 = query2.getSingleResult();
+        System.out.println(minimalIdValue2);
 
         entityManager.close();                              /*Close the EntityManager(session).*/
     }
