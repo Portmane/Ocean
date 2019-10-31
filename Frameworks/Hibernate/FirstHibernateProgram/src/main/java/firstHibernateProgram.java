@@ -26,12 +26,11 @@ public class firstHibernateProgram {
                                                             which will be used as controller for future changes in data-
                                                             base.*/
         Object minimalIdValue =  entityManager.createNativeQuery("SELECT COUNT(a.id) from users a").getSingleResult();
-                                                            /*Query which counts number of existing users before commit
-                                                            * in the transaction.*/
-        System.out.println(minimalIdValue);                 //This line displays the result before commit.
+                                                            /*Query which counts number of existing users before commits.*/
+        System.out.println(minimalIdValue);                 //This line displays the result before commits.
 
 
-        entityManager.getTransaction().begin();             /*Gets the current transaction and stat it.*/
+        entityManager.getTransaction().begin();             /*Gets the current transaction and start it.*/
         entityManager.persist(emp1);                        /*Modifies the future commit.*/
         entityManager.persist(emp2);                        /*Modifies the future commit.*/
         entityManager.getTransaction().commit();            /*Gets the transaction and commit all changes made during
@@ -40,9 +39,8 @@ public class firstHibernateProgram {
 
 
         Object minimalIdValue2 = entityManager.createNativeQuery("SELECT COUNT(a.id) from users a").getSingleResult();
-                                                            /*Query which counts number of existing users after commit
-                                                             * in the transaction.*/
-        System.out.println(minimalIdValue2);                //This line displays the result after commit.
+                                                            /*Query which counts number of existing users after commits.*/
+        System.out.println(minimalIdValue2);                //This line displays the result after commits.
 
 
         entityManager.close();                              /*Closes the EntityManager(session).*/
