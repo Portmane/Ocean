@@ -15,6 +15,7 @@
         <module>SimpleSpringBootApp</module>
         <module>SpringBootDataJpaApp</module>
         <module>REST-APP</module>
+        <module>Sweater_SpringMVCAPP</module>
     </modules>
 
 
