@@ -20,6 +20,10 @@ public class MessageController {
         add(new HashMap<String, String>() {{put("id", "2"); put("text", "Second message"); }});
         add(new HashMap<String, String>() {{put("id", "3"); put("text", "Third message"); }});
     }};
+    private Map<String, String> getMessageById(@PathVariable String id) {
+        return messages.stream().filter(message -> message.get("id").equals(id)).findFirst()
+                .orElseThrow(NotFoundException::new);
+    }
 
 
 
@@ -30,11 +34,12 @@ public class MessageController {
 
     @GetMapping("{id}")
     public Map<String, String> getOne(@PathVariable String id) {
-        return messages.stream().filter(message -> message.get("id").equals(id)).findFirst()
-                .orElseThrow(NotFoundException::new);
+        return getMessageById(id);
     }
 
-    @PatchMapping
+
+
+    @PostMapping
     public Map<String, String> create(@RequestBody Map<String, String> message) {
         message.put("id", String.valueOf(counter++));
         messages.add(message);
@@ -42,8 +47,21 @@ public class MessageController {
         return message;
     }
 
-//    @PutMapping
-//    public Map<String, String> update(@RequestBody Map<String, String> meesage) {
-//
-//    }
+    @PutMapping("{id}")
+    public Map<String, String> update(@PathVariable String id, @RequestBody Map<String, String> message) {
+        Map<String, String> messageFromDB = getMessageById(id);
+
+        messageFromDB.putAll(message);
+        messageFromDB.put("id", id);
+
+        return messageFromDB;
+    }
+
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable String id) {
+        Map<String, String> message = getMessageById(id);
+
+        messages.remove(message);
+    }
 }
