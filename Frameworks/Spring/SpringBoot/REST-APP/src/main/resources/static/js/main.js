@@ -1,26 +1,52 @@
-var messageApi = Vue.resource('/messages{/id}');
+var databaseData = Vue.resource('/messages{/id}');
 
-Vue.component('message-row', {
-    props: ['message'],
-    template: '<div><i>({{  message.id  }})</i>   {{  message.text  }}</div>'
+
+Vue.component('messageForm', {
+    props: ['messages'],
+    data: function() {
+            return {
+                text: ''
+            }
+        },
+    template: '<div>' +
+        '<input type="text" placeholder="Write smth." v-model = "text" />' +
+        '<input type="button" value="Save" @click = "save"/>' +
+        '</div>',
+    methods: {
+        save: function () {
+            var message = {text: this.text};
+
+            databaseData.save({}, message).then(result =>
+                result.json().then(data => {
+                        this.messages.push(data);
+                    }));
+        }
+        
+    }
 });
-
-Vue.component('messages-list', {
+Vue.component('listOfMessages', {
     props: ['messages'],
     template:   '<div>' +
-        '<message-row v-for = "message in messages" :key = "message.id" :message = "message"></message-row>' +
+        '<messageForm :messages = "messages" />' +
+        '<messageRow v-for = "message in messages" :key = "message.id" :message = "message"></messageRow>' +
         '</div>',
     created: function () {
-        messageApi.get().then(result =>
+        databaseData.get().then(result =>
             result.json().then(data =>
                 data.forEach(message =>
                     this.messages.push(message))));
     }
 });
+Vue.component('messageRow', {
+    props: ['message'],
+    template: '<div><i>({{  message.id  }})</i>   {{  message.text  }}</div>'
+});
+
+
 
 var app = new Vue({
     el: '#app',
-    template: '<messages-list :messages = "messages"/>',
+    template: '<listOfMessages :messages = "messages" />',
     data: {
         messages: [
 
