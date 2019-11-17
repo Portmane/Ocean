@@ -7,12 +7,12 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "message")
 @ToString(of = {"id", "text"})
 @EqualsAndHashCode(of = {"id"})
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String text;
 
