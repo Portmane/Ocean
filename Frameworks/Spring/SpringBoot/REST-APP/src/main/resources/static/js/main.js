@@ -65,7 +65,7 @@ Vue.component('listOfMessages', {
     },
     template: '<div style = "position: relative; width: 300px;">' +
         '<messageForm :messages = "messages" :objOfEditableMessage = "message" />' +
-        '<messageRow v-for = "messagde in messages" :key = "message.id" :messages = "messages" :message = "message" ' +
+        '<messageRow v-for = "message in messages" :key = "message.id" :messages = "messages" :message = "message" ' +
             ':editMethod = "editMethod"></messageRow>' +
         '</div>',
     created: function () {
