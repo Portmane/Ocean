@@ -1,11 +1,14 @@
 package io.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import io.domain.Message;
+import io.domain.Views;
 import io.repo.MessageRepo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -22,11 +25,13 @@ public class MessageController {
 
 
     @GetMapping
+    @JsonView(Views.IdAndText.class)
     public List<Message> getAllMessages() {
         return messageRepo.findAll();
     }
 
     @GetMapping("{id}")
+    @JsonView(Views.FullMessage.class)
     public Message getMessage(@PathVariable("id") Message messageToGet) {
         return messageToGet;
     }
@@ -35,6 +40,7 @@ public class MessageController {
 
     @PostMapping
     public Message createMessage(@RequestBody Message messageToAdd) {
+        messageToAdd.setCreationDate(LocalDateTime.now());
         return messageRepo.save(messageToAdd);
     }
 
