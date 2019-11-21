@@ -28,8 +28,3 @@ hs_err_pid*
 target
 helper.js
 *.txt
-
-
-
-# FOR A SOME TIME
-*.properties
