@@ -10,4 +10,8 @@
 
 
 ## About  
-...
+
+### Files:  
+
+* #### application.properties  
+Have to be modified in rules of oauth2 if this technology exists in the project.  
