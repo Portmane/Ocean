@@ -1,8 +1,13 @@
 # REST-APP
 
 ## Technologies  
-* CORE -> Spring Boot  
-* DATABASE -> Spring DATA  
-* Security -> Spring Security (oauth2)
+* BackEnd -> Java  
+* FrontEnd -> Vue  
+
+1. CORE -> Spring Boot  
+1. DATABASE -> Spring DATA  
+1. Security -> Spring Security (oauth2)
+
+
 ## About  
 ...
