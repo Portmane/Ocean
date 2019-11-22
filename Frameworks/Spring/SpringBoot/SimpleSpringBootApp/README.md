@@ -1,5 +1,15 @@
 # INFO for SimpleSpringBootApp
 
+
+
+## Technologies  
+* BackEnd **-> Java**  
+* FrontEnd **-> ---**  
+
+1. CORE **-> Spring Boot**  
+1. DATABASE **-> hardcoded DATA**  
+
+
 ## Couple of fixes:
 * If you will have **ERROR** associated with this output:  
 **Application run failed -> ClassReader failed to parse class file - probably due to a new Java class file version  
