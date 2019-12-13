@@ -11,8 +11,8 @@ public class MessageController {
 
     @GetMapping
     public String main(Map<String, Object> model) {
-        model.put("some", "Hello me!!!");
-        return "mustache/main";
+        model.put("name", "Hello me!!!");
+        return "mustache/index";
     }
 
 
@@ -20,6 +20,6 @@ public class MessageController {
     public String hello(@RequestParam(name = "name", required = false, defaultValue = "WORLD") String name,
                         Map<String, Object> model) {
         model.put("name", name);
-        return "mustache/index";
+        return "mustache/main";
     }
 }
