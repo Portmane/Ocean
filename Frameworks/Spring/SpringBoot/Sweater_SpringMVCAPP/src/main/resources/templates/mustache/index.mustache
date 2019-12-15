@@ -4,29 +4,8 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
-    <div>
-        <div>Add message:</div>                                             <!-- Area of adding a new messages. -->
-        <form method="post">                                                <!-- On POST(standard) method. -->
-            <input type="text" name="text" placeholder="Enter text" />      <!-- Value(text) which will be assigned to @RequestParam parameter. -->
-            <input type="text" name="tag" placeholder="Tag" />              <!-- Value(tag) which will be assigned to @RequestParam parameter. -->
-            <button type="submit">Add</button>                              <!-- Creation of call to POST(standard) method. -->
-        </form>
-
-        <div>Find by tag:</div>
-        <form method="post" action="filterByTag">                           <!-- On POST("/filterByTag") method. -->
-            <input type="text" name="tagNameToFind" />                      <!-- Value which will be assigned to @RequestParam parameter. -->
-            <button type="submit">Find</button>                             <!-- Creation of call to POST("/filterByTag") method. -->
-        </form>
-    </div>
-    <div>List of messages:</div>                                            <!-- Area of the result. -->
-
-    {{#messages}}                                                           <!-- Array of messages. -->
-        <div>
-            <b>{{id}}</b>                                                   <!-- ID value of currently iterated instance. -->
-            <b>{{text}}</b>                                                 <!-- Text value of currently iterated instance. -->
-            <b>{{tag}}</b>                                                 <!-- Tag value of currently iterated instance. -->
-        </div>
-    {{/messages}}
-</body>
+    <body>
+        <div>Hello, user</div>
+        <a href="/CM">Main page.</a>
+    </body>
 </html>
