@@ -13,35 +13,45 @@ import java.util.Map;
 @Controller
 public class MessageController {
     @Autowired                                          // Give us instance(singleton) of the bean.
-    private MessageRepository messageRepository;        // Variable which store MessageRepository interface instance.
+    private MessageRepository messageRepository;        // Variable which store MessageRepository interface instance(singleton).
 
 
 
 
-    @GetMapping                                         // Standard mapping for GET method.
-    public String main(Map<String, Object> model) {
-        Iterable<Message> messages = messageRepository.findAll();   // Returns all messages existed in repository.
-
-        model.put("messages", messages);                            // Updating of the model.
-
-
+    @GetMapping("/")                                         // Standard mapping for GET method.
+    public String helloPage(Map<String, Object> model) {
         return "mustache/index";
     }
 
 
+    @GetMapping("/login")                       // Get mapping to "/login" path.
+    public String login() {
+        return "mustache/login/login";
+    }
+
+
+    @GetMapping("/CM")                                  // Get mapping to "/CM" path.
+    public String messagesPage(Map<String, Object> model) {
+        Iterable<Message> messages = messageRepository.findAll();   // Getting all messages.
+
+        model.put("messages", messages);                            // Updating of the model.
+
+        return "mustache/CM/index";
+    }
+
     @GetMapping("/hello")                               // Get mapping to "/hello" path.
-    public String hello(@RequestParam(name = "name", required = false, defaultValue = "WORLD") String name,
+    public String helloPage(@RequestParam(name = "name", required = false, defaultValue = "WORLD") String name,
                         Map<String, Object> model) {
         model.put("name", name);                        // Updating of the model.
 
 
-        return "mustache/main";
+        return "mustache/hello/index";
     }
 
 
 
-    @PostMapping                                        // Standard POST mapping.
-    public String add(@RequestParam String text, @RequestParam String tag, Map<String, Object> model) {
+    @PostMapping("/CM")                                        // Standard POST("/CM") mapping.
+    public String addNewMessage(@RequestParam String text, @RequestParam String tag, Map<String, Object> model) {
         Message message = new Message(text, tag);       // Creation of the new instance(Entity).
 
         messageRepository.save(message);                // Saving the new instance.
@@ -50,12 +60,12 @@ public class MessageController {
         model.put("messages", messages);                            // Updating of the model.
 
 
-        return "mustache/index";
+        return "mustache/CM/index";
     }
 
 
-    @PostMapping("/filterByTag")                        // Get mapping to "/filterByTag" path.
-    public String filter(@RequestParam String tagNameToFind, Map<String, Object> model) {
+    @PostMapping("/filterByTag")                             // Get mapping to "/filterByTag" path.
+    public String filterByTag(@RequestParam String tagNameToFind, Map<String, Object> model) {
         Iterable<Message> messages;                                     // Variable where we are store messages.
 
         if (tagNameToFind != null && !tagNameToFind.isEmpty())          // Condition on not void of the parameter.
@@ -66,6 +76,6 @@ public class MessageController {
         model.put("messages", messages);                                // Updating of the model.
 
 
-        return "mustache/index";
+        return "mustache/CM/index";
     }
 }
