@@ -21,10 +21,10 @@ public class Message {
     public Message() {                                  // None parameterized constructor.
 
     }
-    public Message(String text, String tag) {
+    public Message(String text, String tag) {           // Constructor witch creates Message with text and tag seated values.
         this.text = text;
         this.tag = tag;
-    }       // Constructor witch creates Message with text and tag seated values.
+    }
 
 
 
