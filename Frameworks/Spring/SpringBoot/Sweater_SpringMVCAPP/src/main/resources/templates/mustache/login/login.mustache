@@ -1,0 +1,16 @@
+<!DOCTYPE html> <!--  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example</title>
+</head>
+    <body>
+        <form action="/login" method="post">                                                    <!-- POST method -->
+            <div><label> User Name : <input type="text" name="username"/> </label></div>        <!-- User name -->
+            <div><label> Password: <input type="password" name="password"/> </label></div>      <!-- User password -->
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />                          <!-- Additional values. -->
+            <div><input type="submit" value="Sign In"/></div>                                   <!-- Button for activation of the POST method. -->
+        </form>
+        <a href="/signup">Add new user</a>
+    </body>
+</html>
