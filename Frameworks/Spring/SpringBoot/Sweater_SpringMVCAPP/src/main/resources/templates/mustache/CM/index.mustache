@@ -1,0 +1,48 @@
+<!DOCTYPE HTML> <!--  -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+
+    <body>
+                                                                                <!-- Log out div. -->
+        <div>
+            <form action="/logout" method="post">                               <!-- POST("/logout") method. -->
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">          <!-- Additional values. -->
+                <input type="submit" value="Sign Out" />                        <!-- Log out submission. -->
+            </form>
+        </div>
+
+                                                                                <!-- Area of adding a new messages. -->
+        <div>
+            <div>Add message:</div>
+            <form method="post">                                                <!-- POST(standard) method. -->
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">          <!-- Additional values. -->
+                <input type="text" name="text" placeholder="Enter text" />      <!-- Value(text) which will be assigned to @RequestParam parameter. -->
+                <input type="text" name="tag" placeholder="Tag" />              <!-- Value(tag) which will be assigned to @RequestParam parameter. -->
+                <button type="submit">Add</button>                              <!-- Creation of call to POST(standard) method. -->
+            </form>
+
+            <div>Find by tag:</div>
+            <form method="post" action="filterByTag">                           <!-- POST("/filterByTag") method. -->
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">          <!-- Additional values. -->
+                <input type="text" name="tagNameToFind" />                      <!-- Value which will be assigned to @RequestParam parameter. -->
+                <button type="submit">Find</button>                             <!-- Creation of call to POST("/filterByTag") method. -->
+            </form>
+        </div>
+
+                                                                                <!-- Area of the result. -->
+        <div>List of messages:</div>
+        {{#messages}}                                                           <!-- Array of messages. -->
+        <div>
+            <b>{{id}}</b>                                                   <!-- ID value of currently iterated instance. -->
+            <b>{{text}}</b>                                                 <!-- Text value of currently iterated instance. -->
+            <span>{{tag}}</span>                                            <!-- Tag value of currently iterated instance. -->
+        </div>
+        {{/messages}}
+
+
+    </body>
+</html>
