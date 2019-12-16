@@ -14,8 +14,8 @@ public class Message {
     private Integer id;                                 // Variable which stores the value of ID.
 
     private String text;                                // Variable which stores the value of text of the message.
-    private String tag;                                 //
-
+    private String tag;                                 // Indicator of the message.
+    private User author;                                // Who have posted the message.
 
 
     public Message() {                                  // None parameterized constructor.
@@ -27,6 +27,14 @@ public class Message {
     }
 
 
+    
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
 
     public Integer getId() {
         return id;
