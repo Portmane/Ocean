@@ -7,7 +7,7 @@
     <groupId>Information</groupId>
     <artifactId>Information</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.14</version>
+    <version>1.0.17</version>
     <modules>
         <module>JavaClasses</module>
         <module>Tasks</module>
