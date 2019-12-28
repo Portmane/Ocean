@@ -12,6 +12,7 @@
         <module>JavaClasses</module>
         <module>Tasks</module>
         <module>Frameworks</module>
+        <module>JavaDesignPatterns</module>
     </modules>
     <name>Java-API-items</name>
 
