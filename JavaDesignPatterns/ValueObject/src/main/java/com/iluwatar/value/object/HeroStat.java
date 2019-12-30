@@ -12,8 +12,31 @@ public class HeroStat {
         this.intelligence = intelligence;
         this.luck = luck;
     }
-//    // Return object of this guy.
-//    public HeroStat valueOf(int strength, int intelligence, int luck) {
-//
-//    }
+    // Return object of this guy. Factory method.
+    public static HeroStat valueOf(int strength, int intelligence, int luck) {
+        return new HeroStat(strength, intelligence, luck);                  // Return new HeroStat object based on given
+                                                                            // arguments.
+    }
+
+
+    // Getters.
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public int getLuck() {
+        return luck;
+    }
+
+
+    //About the object.
+    @Override
+    public String toString() {
+        return "HELLO WORLD";
+        // Values of current instance.
+    }
 }
