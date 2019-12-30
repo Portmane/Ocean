@@ -33,10 +33,23 @@ public class HeroStat {
     }
 
 
-    //About the object.
+    // About the object.
+
+    // Values of current instance.
     @Override
     public String toString() {
-        return "HELLO WORLD";
-        // Values of current instance.
+        return "Strength: " + strength + ", intelligence: " + intelligence + ", luck: " + luck;
+    }
+
+    // HashCode of the instance.
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    // Equals method of the instance.
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }
