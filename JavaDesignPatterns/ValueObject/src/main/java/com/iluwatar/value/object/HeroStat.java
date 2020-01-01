@@ -1,5 +1,7 @@
 package com.iluwatar.value.object;
 
+import java.util.Map;
+
 public class HeroStat {
     private int strength;               // Are you smart enough to be strength ?
     private int intelligence;           // Oh you are really smart ?
@@ -44,12 +46,23 @@ public class HeroStat {
     // HashCode of the instance.
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int hash = 7;
+        hash = 31 * hash + (strength^(strength >>> 30));
+        hash = 31 * hash + intelligence;
+        hash = 31 * hash + luck;
+        return hash;
     }
 
     // Equals method of the instance.
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;                               // If links of instances are the same they are equal.
+        if (obj == null) return false;                              // If argument instance null instances are not equal.
+        if (this.getClass() != obj.getClass()) return false;        // If classes of instances aren't the same
+        HeroStat hero = (HeroStat) obj;                             // Get full representation of the argument instance.
+        return this.hashCode() == hero.hashCode()                   // IF their values are the same instances are the equal.
+                && intelligence == hero.intelligence
+                && luck == hero.luck
+                && strength == hero.strength;
     }
 }
