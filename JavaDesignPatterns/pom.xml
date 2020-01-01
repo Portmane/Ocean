@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>ValueObject</module>
+        <module>Visitor</module>
     </modules>
 
 
