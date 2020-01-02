@@ -5,10 +5,10 @@
     <parent>
         <artifactId>Information</artifactId>
         <groupId>Information</groupId>
-        <version>0.0.14</version>
+        <version>1.0.17</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>javaClasses</artifactId>
+    <artifactId>Information.javaClasses</artifactId>
     <packaging>jar</packaging>
 
 
