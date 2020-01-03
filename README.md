@@ -20,6 +20,9 @@ In Frameworks module you will find simple compilations and use of the specified 
 ### JavaClasses  
 Consist of explanation of Java API classes, interfaces, etc.  
 
+### Java design patterns
+Folder where I am writing realizations of some java patterns and parts of their work.  
+
 ### Tasks  
 Here you will see my own tasks for myself and its realizations.  
 
