@@ -2,20 +2,27 @@ package com.realizationWithTwoInterfaces.shapes;
 
 import com.realizationWithTwoInterfaces.visitor.Visitor;
 
-public class Circle extends Dot {
-    private int radius;
+public class Circle extends Dot {                           // Extends Dot method realizations and Dot variable etc.
+    private int radius;                                     // Radius of the circle.
 
-    public Circle(int id, int x, int y, int radius) {
+
+    public Circle(int id, int x, int y, int radius) {       // Fully parameterized constructor.
         super(id, x, y);
         this.radius = radius;
     }
 
+
+
     @Override
-    public String accept(Visitor visitor) {
-        return visitor.visitCircle(this);
+    public String accept(Visitor visitor) {                 /* Realization of Visitor pattern method. Which gives an ability to
+                                                            * work with object through third part class. */
+        return visitor.visitCircle(this);                   /* Gives Visitor class explanation which method it has to call in Collection
+                                                            * of multiple Shapes. */
     }
 
-    public int getRadius() {
+
+
+    public int getRadius() {                                // Getter.
         return radius;
     }
 }
