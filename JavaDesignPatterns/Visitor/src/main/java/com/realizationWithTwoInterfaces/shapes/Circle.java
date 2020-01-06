@@ -22,7 +22,8 @@ public class Circle extends Dot {                           // Extends Dot metho
 
 
 
-    public int getRadius() {                                // Getter.
+    // Getter.
+    public int getRadius() {
         return radius;
     }
 }
