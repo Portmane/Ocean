@@ -1,7 +1,7 @@
 import com.realizationWithTwoInterfaces.shapes.*;
 import com.realizationWithTwoInterfaces.visitor.XMLExportVisitor;
 
-public class DEMO {
+public class DEMO_Visitor {
     public static void main(String[] args) {
 
         realizationWithTwoInterfaces.execute();     /* Stats execution of the realization of Visitor Java pattern
