@@ -37,7 +37,8 @@ public class Dot implements Shape {                 // Simple figure in our prog
 
 
 
-    public int getX() {                     // Getters.
+    // Getters.
+    public int getX() {
         return x;
     }
 
