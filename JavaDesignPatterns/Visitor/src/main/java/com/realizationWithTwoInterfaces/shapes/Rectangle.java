@@ -39,7 +39,8 @@ public class Rectangle implements Shape {
 
 
 
-    public int getId() {                                                // Getters.
+    // Getters.
+    public int getId() {
         return id;
     }
 
