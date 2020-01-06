@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CompoundShape implements Shape {
     public int id;                                          // ID.
-    public List<Shape> children = new ArrayList<>();        // List of all compound shapes.
+    public List<Shape> childrenShapes = new ArrayList<>();        // List of all compound shapes.
 
 
     public CompoundShape(int id) {                          // Fully parameterized constructor.
@@ -34,12 +34,13 @@ public class CompoundShape implements Shape {
     }
 
     public void add(Shape shape) {                          // Adds new compound shape.
-        children.add(shape);
+        childrenShapes.add(shape);
     }
 
 
 
+    // Getter.
     public int getId() {
         return id;
-    }                       // Getter.
+    }
 }
