@@ -1,7 +1,5 @@
 package com.iluwatar.value.object;
 
-import java.util.Map;
-
 public class HeroStat {
     private int strength;               // Are you smart enough to be strength ?
     private int intelligence;           // Oh you are really smart ?
@@ -14,10 +12,11 @@ public class HeroStat {
         this.intelligence = intelligence;
         this.luck = luck;
     }
-    // Return object of this guy. Factory method.
+
+    // Return OBJECT of this guy. Factory method.
     public static HeroStat valueOf(int strength, int intelligence, int luck) {
         return new HeroStat(strength, intelligence, luck);                  // Return new HeroStat object based on given
-                                                                            // arguments.
+        // arguments.
     }
 
 
@@ -47,7 +46,7 @@ public class HeroStat {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 31 * hash + (strength^(strength >>> 30));
+        hash = 31 * hash + (strength ^ (strength >>> 30));
         hash = 31 * hash + intelligence;
         hash = 31 * hash + luck;
         return hash;
