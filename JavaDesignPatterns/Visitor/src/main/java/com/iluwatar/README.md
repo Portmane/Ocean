@@ -15,4 +15,4 @@ This example was mane by myself. And another used information you can find
 
 ## Cooperation  
 All offers are welcome, here is my email **"wh9noo@gmail.com"**. Any corrections or help in Java code as well  
-as in explanations are appreciated :hugs:
+as explanations are appreciated :hugs:
