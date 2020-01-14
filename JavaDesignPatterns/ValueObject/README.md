@@ -11,4 +11,4 @@ All materials was taken from [this page](https://github.com/Portmane/java-design
 
 ## Cooperation  
 All offers are welcome, here is my email **"wh9noo@gmail.com"**. Any corrections or help in Java code as well  
-as in explanations are appreciated :hugs:  
+as explanations are appreciated :hugs:  
