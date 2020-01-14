@@ -3,8 +3,8 @@
 ## Realization which uses two interfaces  
 ### About  
 This is one of realizations of Java Visitor pattern, where I have used **two interfaces**:  
-* Interface for shapes (dot, circle, etc)  
-* Interface for visitors (XMLExportVisitor)  
+* Interface(Shape) for shapes as: dot, circle, etc;  
+* Interface(Visitor) for visitors as: XMLExportVisitor, etc;  
 
 This realization have the same structure as shown on this picture and difference only in part  
 where **<<-Java Class->> Unit** is replaced by **<<-Java Interface->> Shape**.  
@@ -17,4 +17,4 @@ This example was taken from
 
 ## Cooperation  
 All offers are welcome, here is my email **"wh9noo@gmail.com"**. Any corrections or help in Java code as well  
-as in explanations are appreciated :hugs:
+as explanations are appreciated :hugs:
