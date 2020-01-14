@@ -5,7 +5,7 @@ import com.iluwatar.units.Sergeant;
 import com.iluwatar.units.Soldier;
 
 public class CommanderVisitor implements UnitVisitor{
-    CommanderVisitor() {                    /* Standard constructor. */
+    public CommanderVisitor() {                    /* Standard constructor. */
 
     }
 
