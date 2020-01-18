@@ -1,3 +1,5 @@
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 
@@ -6,6 +8,8 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(generator = "incrementor")
+    @NotNull
+    @Column(name = "id")
     private int id;
     public int getId() {
         return id;
