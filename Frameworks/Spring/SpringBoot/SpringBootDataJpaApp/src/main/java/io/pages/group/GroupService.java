@@ -16,10 +16,11 @@ public class GroupService {
 
     //Get methods.
     public List<Group> getAllGroups() {
-        List<Group> groups = new ArrayList<>();
-        groupRepository.findAll()
-        .forEach(groups::add);
-        return groups;
+//        List<Group> groups = new ArrayList<>();
+//        groupRepository.findAll()
+//        .forEach(groups::add);
+//        return groups;
+        return (List<Group>) groupRepository.findAll();
     }
     public Group getGroup(String id) {
         return groupRepository.findById(id).get();

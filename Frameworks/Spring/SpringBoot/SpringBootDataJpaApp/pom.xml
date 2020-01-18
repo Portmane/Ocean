@@ -11,7 +11,8 @@
     <artifactId>Information.frameworks.spring.springBoot.springBootDataJpaApp</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <java.version>13</java.version>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
     </properties>
 
 
