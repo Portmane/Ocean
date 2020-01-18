@@ -1,6 +1,6 @@
 package io.config;
 
-import io.service.UserService;
+import io.service.UsrService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,9 +11,9 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {       // COMMENT !!!
-    private final UserService userService;                                  // Dependency.
-    public WebSecurityConfig(UserService userService) {
-        this.userService = userService;
+    private final UsrService usrService;                                  // Dependency.
+    public WebSecurityConfig(UsrService usrService) {
+        this.usrService = usrService;
     }
 
 
@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {       // C
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService)
+        auth.userDetailsService(usrService)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance());
     }
 }
