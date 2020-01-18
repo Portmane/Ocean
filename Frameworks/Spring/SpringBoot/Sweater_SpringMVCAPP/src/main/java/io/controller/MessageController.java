@@ -1,8 +1,11 @@
 package io.controller;
 
 import io.domain.Message;
+import io.domain.User;
 import io.repos.MessageRepository;
+import org.hibernate.internal.build.AllowPrintStacktrace;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,7 +54,10 @@ public class MessageController {
 
 
     @PostMapping("/CM")                                        // Standard POST("/CM") mapping.
-    public String addNewMessage(@RequestParam String text, @RequestParam String tag, Map<String, Object> model) {
+    public String addNewMessage(@AuthenticationPrincipal User user,
+                                @RequestParam String text,
+                                @RequestParam String tag,
+                                Map<String, Object> model) {
         Message message = new Message(text, tag);       // Creation of the new instance(Entity).
 
         messageRepository.save(message);                // Saving the new instance.
