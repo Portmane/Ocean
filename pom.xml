@@ -7,11 +7,12 @@
     <groupId>Information</groupId>
     <artifactId>Information</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.14</version>
+    <version>1.0.17</version>
     <modules>
         <module>JavaClasses</module>
         <module>Tasks</module>
         <module>Frameworks</module>
+        <module>JavaDesignPatterns</module>
     </modules>
     <name>Java-API-items</name>
 
@@ -19,8 +20,8 @@
 
 
     <properties>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
+        <maven.compiler.source>13</maven.compiler.source>
+        <maven.compiler.target>13</maven.compiler.target>
     </properties>
 
 
