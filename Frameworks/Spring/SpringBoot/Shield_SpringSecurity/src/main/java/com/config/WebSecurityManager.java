@@ -11,15 +11,25 @@ import org.springframework.security.crypto.password.PasswordEncoder;
                                                                             * a WEB security configuration. */
 public class WebSecurityManager extends WebSecurityConfigurerAdapter {      /* Extends class which stores method for
                                                                             * direct work with AuthenticationManagerBuilder
-                                                                            * class.*/
+                                                                            * class and others.*/
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder)
             throws Exception {
         // Set your configuration on the authenticationManagerBuilder instance.
-        authenticationManagerBuilder.inMemoryAuthentication()       // Set method of authentication.
-                .withUser("q")                              // Sets username for the specific method of authentication.
-                .password("1")                                       // Sets password for the specific method of authentication.
-                .roles("USER");                                      // Sets roll for the specific method of authentication.
+        authenticationManagerBuilder.inMemoryAuthentication()       // Sets method of authentication.
+                    .withUser("q")                              // Sets username for the specific method of authentication.
+                    .password("1")                                       // Sets password for the specific method of authentication.
+                    .roles("USER")                                       // Sets roll for the specific method of authentication.
+                .and()                                              /* Returns object with the same state as it has been
+                                                                    * returned from inMemoryAuthentication() method before.*/
+                    .withUser("w")                              // Sets username for the specific method of authentication.
+                    .password("2")                                       // Sets password for the specific method of authentication.
+                    .roles("USER")
+                .and()                                              /* Returns object with the same state as it has been
+                                                                    * returned from inMemoryAuthentication() method before.*/
+                    .withUser("KAKJE_YA_OHUENEN")                              // Sets username for the specific method of authentication.
+                    .password("1")                                       // Sets password for the specific method of authentication.
+                    .roles("USER");                                      // Sets roll for the specific method of authentication.
     }
 
 
