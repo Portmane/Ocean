@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SignInController {
     @GetMapping("/")                            // On any GET request from the user, call this method.
     public String indexPage() {
-        return "index";             // Data of return.
+        return "index";             // DATA of return.
     }
 
     @GetMapping("/user")                        // On "/user" GET request.
