@@ -25,9 +25,10 @@ public class UsrUserDetails implements UserDetails {                    // Imple
         this.password = user.getPassword();
         this.enabled = user.getEnabled();
 
-        this.authorities = Arrays.stream(user.getRoles().split(","))        // Comment.
-            .map(SimpleGrantedAuthority::new)
-            .collect(Collectors.toList());
+        this.authorities = Arrays.stream(user.getRoles().split(","))        // Creates the stream of given role.
+            .map(SimpleGrantedAuthority::new)                                     // Sets operation to be operated on this stream.
+            .collect(Collectors.toList());                                        /* Converts Collector<T, A, R> returned
+                                                                                  * from toList() method in the List. */
     }
 
     // Standard constructor.
