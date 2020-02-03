@@ -26,6 +26,8 @@ public class UsrService implements UserDetailsService {
 
         user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + userNameToFind));  // If User was not found.
 
-        return user.map(UsrUserDetails::new).get();                                 // Comment.
+        return user.map(UsrUserDetails::new)            /* Takes Optional<Usr> instance and using UsrUserDetails::new constructor
+                                                        * reference gets Optional<UsrUserDetails> instance.*/
+                .get();                                 /* Gets present value of the Optional<UsrUserDetails>.*/
     }
 }
