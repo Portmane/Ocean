@@ -19,10 +19,11 @@ available for both **authenticated** and **non authenticated** users. Path **/us
 **authenticated** users and **authorized** with **USER role** or higher permissible. Path **/admin** will be available  
 only for users with **ADMIN role**.  
 **Authentication** and **authorization** are both achieved by use of **userDetailsService()** method of  
-**AuthenticationManagerBuilder** instance class which we get through the extending of the **WebSecurityConfigurerAdapter**  
-**abstract class** in **WebSecurityManager.java** file, ass a result we have to make realization of the  
-**UserDetailsService**, **UserDetails** interfaces. For right work of authorization we also use **configure()** method  
-of the same **WebSecurityConfigurerAdapter abstract class** where we specifying witch paths are available for witch users.  
+**AuthenticationManagerBuilder** instance class which we get through the extending and overriding of the  
+**WebSecurityConfigurerAdapter abstract class** method in **WebSecurityManager.java** file, ass a result we have to  
+make realization of the **UserDetailsService**, **UserDetails** interfaces. For right work of authorization we also  
+use **configure()** method which gets **HttpSecurity** class instance of the same **WebSecurityConfigurerAdapter**  
+**abstract class** where we specifying witch paths are available for witch users.  
 
 
 ## Couple of fixes:
