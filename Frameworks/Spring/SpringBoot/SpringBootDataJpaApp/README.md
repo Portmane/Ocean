@@ -23,7 +23,7 @@ Try to solve it by changing the **jdk** version in **pom.xml** file. It can be m
 ```
 
 
-## Need to be fix:
+## Need to be fixed:
 * .jar packaging
 Program works from the Intellij IDE. When I am packing it into the **.jar** I am resolving the error. (Have to fix)  
   **Need your help if you know what I can to do. Have a good day.**
