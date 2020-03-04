@@ -12,8 +12,9 @@
 
 
 ## About the project  
-It is simple SpringBoot APP which uses Spring Security. I am also make representation of the three different ways of  
-work with Spring Security allocated in **config/WebSecurityManager.java** file.  
+It is simple SpringBoot APP which uses Spring Security. *It is using standard UI for authentication given by Spring*  
+*Security where access difference achieved by roles*. I am also make representation of the three different ways of  
+work with allowed authentication data, allocated in **config/WebSecurityManager.java** file.  
 We have there pages represented in **controllers/SighInController.java** file where **http://localhost:8080/** path is  
 available for both **authenticated** and **non authenticated** users. Path **/user** will be available only for  
 **authenticated** users and **authorized** with **USER role** or higher permissible. Path **/admin** will be available  
