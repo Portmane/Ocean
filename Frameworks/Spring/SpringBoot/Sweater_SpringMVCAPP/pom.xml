@@ -57,13 +57,32 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        <!--    lombok    -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--    Open API    -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.1.44</version>
+        </dependency>
+
         <dependency>
             <groupId>Information</groupId>
             <artifactId>Information.frameworks.spring.springBoot.springBootDataJpaApp</artifactId>
             <version>0.0.14</version>
             <scope>compile</scope>
         </dependency>
+
+
+
+
     </dependencies>
+
+
 
     <build>
         <plugins>
